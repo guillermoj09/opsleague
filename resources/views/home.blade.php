@@ -1,7 +1,8 @@
-@include('header/header')
+@extends('layouts.layout')
 
-<!doctype html>
-<html class="no-js" lang="">
+@section('contenido')
+    
+
 <body class="sticky-header bg-aash">
     <!--[if IE]>
 	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -107,7 +108,7 @@
         <!--=====================================-->
         <!--=            Post Start           =-->
         <!--=====================================-->
-              <div class="container">
+        <div class="container">
         <div class="heading-layout1">
                     <h2 class="heading-title">HIGHLIGHTS</h2>
 
@@ -190,13 +191,14 @@
                                 </div>
                             </div>
                         </div>
-                                          <div class="widget widget-most-viewed">
+                        <div class="widget widget-most-viewed">
                             <div class="heading-layout1">
                                 <h3 class="heading-title">DISCORD</h3>
                             </div>
                             <div class="grid-post">
                                 <div class="item-img">
-                                    <img src="media/figure/ad5.jpg" alt="Post">
+                                    <iframe src="https://discordapp.com/widget?id=704852760272830534&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
+
                                 </div>
                             </div>
                             <div class="list-post">
@@ -514,13 +516,14 @@
             </div>
         </section>
         <!--=====================================-->
+        <!--=              Login                =-->
+        <!--=====================================-->
+        
+        <!--=====================================-->
         <!--=            Footer Start           =-->
         <!--=====================================-->
-        @include('footer/footer')
         <!--=====================================-->
         <!--=      Header Search Start          =-->
         <!--=====================================-->
         
-</body>
-
-</html>
+@stop

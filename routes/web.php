@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/hola-mundo', function () {
-    return 'Hola soy guillermo';
-});
+Route::get('/registro', 'RegisterController@index')->name('registro');
+
+Route::post('/registro','RegisterController@save')->name('registro');
+
+Route::post('/validacionLogin', 'ValidacionLoginController@iniciarSesion')->name('validacionLogin');
+
