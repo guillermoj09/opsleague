@@ -11,23 +11,23 @@
         <link rel="shortcut icon" type="image/x-icon" href="media/favicon.png">
     
         <!-- Dependencies CSS -->
-        <link rel="stylesheet" href="dependencies/bootstrap/css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/fontawesome/css/all.min.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/flaticon/flaticon.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/animate.css/css/animate.min.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/owl.carousel/css/owl.carousel.min.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/owl.carousel/css/owl.theme.default.min.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/magnific-popup/css/magnific-popup.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/sal/css/sal.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/select2/css/select2.min.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/nivo-slider/nivo-slider.css" type="text/css">
-        <link rel="stylesheet" href="dependencies/meanmenu/meanmenu.min.css" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/bootstrap/css/bootstrap.min.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/fontawesome/css/all.min.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/flaticon/flaticon.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/animate.css/css/animate.min.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/owl.carousel/css/owl.carousel.min.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/owl.carousel/css/owl.theme.default.min.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/magnific-popup/css/magnific-popup.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/sal/css/sal.css')}}"  type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/select2/css/select2.min.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/nivo-slider/nivo-slider.css')}}" type="text/css">
+        <link rel="stylesheet" href="{{asset('dependencies/meanmenu/meanmenu.min.css')}}" type="text/css">
     
         <!-- Custom CSS -->
         <link rel="stylesheet" href="assets/css/app.css" type="text/css">
         <!-- Google Web Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,700&display=swap" rel="stylesheet">
-    
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0" nonce="p5e0uipQ"></script>
 </head>
 
     <header class="header">
@@ -41,7 +41,7 @@
                                     @guest
                                 <li><i class="far fa-user"></i><a onClick = "abrirlogin();">Iniciar sesión</a>&nbsp / &nbsp<a href="{{route('registro')}}"> Registrar</a></li>
                                     @else
-                                    <li>{{ auth()->user()->nickname }}</li>
+                                    <li>{{ auth('web')->user()->nickname }}</li>
 
                                     @endauth
                                    
@@ -174,19 +174,18 @@
                     <div class="col-lg-3">
                         <div class="footer-box">
                             <h3 class="footer-box-title">
-                                Useful Links
+                                Accesos
                             </h3>
                             <div class="footer-link">
                                 <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Products</a></li>
-                                    <li><a href="#">Services</a></li>
-                                    <li><a href="#">Blog</a></li>
+            <li><a href="#">Torneos</a></li>
+            <li><a href="#">Equipos</a></li>
+            <li><a href="#">Jugadores</a></li>
                                 </ul>
                                 <ul>
-                                    <li><a href="#">Career</a></li>
-                                    <li><a href="#">Contacts</a></li>
-                                    <li><a href="#">Pages</a></li>
+            <li><a href="#">Ranking</a></li>
+            <li><a href="#">Blacklist</a></li>
+            <li><a href="#">Contacto</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -196,32 +195,21 @@
                             <div class="footer-logo">
                                 <a href="index.html"><img src="media/logo.png" alt="logo"></a>
                             </div>
-                            <p>We are an environmentally friendly renewable energy company offering eco products, & solutions.</p>
-                            <div class="input-group">
-                                <input type="text" class="form-control" placeholder="Newsltter Sign Up!">
-                                <div class="input-group-append">
-                                    <button class="item-btn" type="button"><i class="fas fa-angle-right"></i></button>
-                                </div>
-                            </div>
+                            <p>Equipo de jugadores experimentados dedicados a los esports con el objetivo de gestionar torneos profesionales y transparentes para nuestros gamers.</p>
+                            
                         </div>
                     </div>
                     <div class="col-lg-3">
                         <div class="footer-box">
                             <h3 class="footer-box-title">
-                                Follow Us On
+                                Siguenos en :
                             </h3>
                             <div class="footer-social">
                                 <ul class="social-icon">
-                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-square"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-github-alt"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-skype"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-dribbble-square"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-vimeo-v"></i></a></li>
+                                    <li><a href="https://www.facebook.com/OPTIMUSLEAGUE"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/opsleague/"><i class="fab fa-instagram"></i></a></li>
+                                    <li><a href="https://www.youtube.com/channel/UCztOgB0QyMXHKrkB92tbISA"><i class="fab fa-youtube"></i></a></li>
+                                    <li><a href="https://www.twitch.tv/opsleagues"><i class="fab fa-twitch"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -231,7 +219,7 @@
         </div>
         <div class="footer-bottom-wrap">
             <div class="container">
-                <div class="footer-copyright">Copyright@2020 gamxo. All Rights Reserved</div>
+                <div class="footer-copyright">Copyright@2020 OPSLeague. Todos los derechos reservados</div>
             </div>
         </div>
     </footer>
@@ -272,23 +260,22 @@
     @include('auth/login')
 </div>
 <!-- Dependencies Js -->
-<script src="dependencies/jquery/js/jquery.min.js"></script>
-<script src="dependencies/popper.js/js/popper.min.js"></script>
-<script src="dependencies/bootstrap/js/bootstrap.min.js"></script>
-<script src="dependencies/nivo-slider/jquery.nivo.slider.js"></script>
-<script src="dependencies/nivo-slider/home.js"></script>
-<script src="dependencies/owl.carousel/js/owl.carousel.min.js"></script>
-<script src="dependencies/magnific-popup/js/jquery.magnific-popup.min.js"></script>
-<script src="dependencies/sal/js/sal.js"></script>
-<script src="dependencies/select2/js/select2.min.js"></script>
-<script src="dependencies/isotope-layout/js/isotope.pkgd.min.js"></script>
-<script src="dependencies/imagesloaded/js/imagesloaded.pkgd.min.js"></script>
-<script src="dependencies/validator/validator.min.js"></script>
-<script src="dependencies/meanmenu/jquery.meanmenu.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtmXSwv4YmAKtcZyyad9W7D4AC08z0Rb4"></script>
+<script src="{{asset('dependencies/jquery/js/jquery.min.js')}}"></script>
+<script src="{{asset('dependencies/popper.js/js/popper.min.js')}}"></script>
+<script src="{{asset('dependencies/bootstrap/js/bootstrap.min.js')}}"></script>
+<script src="{{asset('dependencies/nivo-slider/jquery.nivo.slider.js')}}"></script>
+<script src="{{asset('dependencies/nivo-slider/home.js')}}"></script>
+<script src="{{asset('dependencies/owl.carousel/js/owl.carousel.min.js')}}"></script>
+<script src="{{asset('dependencies/magnific-popup/js/jquery.magnific-popup.min.js')}}"></script>
+<script src="{{asset('dependencies/sal/js/sal.js')}}"></script>
+<script src="{{asset('dependencies/select2/js/select2.min.js')}}"></script>
+<script src="{{asset('dependencies/isotope-layout/js/isotope.pkgd.min.js')}}"></script>
+<script src="{{asset('dependencies/imagesloaded/js/imagesloaded.pkgd.min.js')}}"></script>
+<script src="{{asset('dependencies/validator/validator.min.js')}}"></script>
+<script src="{{asset('dependencies/meanmenu/jquery.meanmenu.min.js')}}"></script>
 
     <!-- Custom Js -->
-<script src="assets/js/app.js"></script>
+<script src="{{asset('assets/js/app.js')}}"></script>
 <script>
 
     function abrirlogin(){

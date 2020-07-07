@@ -10,6 +10,8 @@ class Jugadores extends Authenticatable
 {
     use Notifiable;
 
+    
+
     protected $hidden = [
         'password'
     ];

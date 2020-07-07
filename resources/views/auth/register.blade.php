@@ -15,11 +15,12 @@
                             <div class="form-group">
                                 <label for="email">Email</label> 
                                 <input class="form-control" type="email" name="email" id="email" placeholder="Ingrese tu email">
-                            
+                                {!! $errors->first('email','<span class="help-block">:message</span>') !!}
                             </div>
                             <div class="form-group">
                                 <label for="nickname">Nickname</label> 
-                                <input class="form-control" type="text" name="nickname" id="nickname" placeholder="Ingrese tu password">    
+                                <input class="form-control" type="text" name="nickname" id="nickname" placeholder="Ingrese tu password">   
+                                {!! $errors->first('nickname','<span class="help-block">:message</span>') !!}
                             </div>
                             <div class="form-group">
                                 <label for="password">Password</label> 

@@ -55,6 +55,27 @@ return [
             'visibility' => 'public',
         ],
 
+        'imagesJugadores' => [
+            'driver' => 'local',
+            'root' => storage_path('app/imagesJugadores'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'noticias' => [
+            'driver' => 'local',
+            'root' => storage_path('app/noticias'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+        'highlights' => [
+            'driver' => 'local',
+            'root' => storage_path('app/highlights'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_KEY'),

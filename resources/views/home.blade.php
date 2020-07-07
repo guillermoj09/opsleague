@@ -119,18 +119,19 @@
                                     <img src="media/post/post20.jpg" alt="post">
                                 </div>
                                 <div class="popup-video">
-                                    <a class="play-btn popup-youtube" href="#">
+                                    <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=zkG86_Rwla0">
                                         <i class="fas fa-play"></i>
                                     </a>
                                 </div>
-    
+                                <div class="item-content">
+                                </div>
                             </div>
                             <div class="post-grid-layout4">
                                 <div class="item-img">
                                     <img src="media/post/post21.jpg" alt="post">
                                 </div>
                                 <div class="popup-video">
-                                    <a class="play-btn popup-youtube" href="#">
+                                    <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=zkG86_Rwla0">
                                         <i class="fas fa-play"></i>
                                     </a>
                                 </div>
@@ -142,7 +143,7 @@
                                     <img src="media/post/post22.jpg" alt="post">
                                 </div>
                                 <div class="popup-video">
-                                    <a class="play-btn popup-youtube" href="#">
+                                    <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=zkG86_Rwla0">
                                         <i class="fas fa-play"></i>
                                     </a>
                                 </div>
@@ -152,10 +153,10 @@
                     
                              <div class="post-grid-layout4">
                                 <div class="item-img">
-                                    <img src="media/post/post23.jpg" alt="post">
+                                    <img src="media/post/post22.jpg" alt="post">
                                 </div>
                                 <div class="popup-video">
-                                    <a class="play-btn popup-youtube" href="#">
+                                    <a class="play-btn popup-youtube"  href='https://www.youtube.com/watch?v=zkG86_Rwla0'>
                                         <i class="fas fa-play"></i>
                                     </a>
                                 </div>
@@ -171,11 +172,11 @@
                     <div class="col-xl-3 col-lg-4 col-md-6 order-lg-1">
                         <div class="widget widget-most-viewed">
                             <div class="heading-layout1">
-                                <h3 class="heading-title">TWITCH</h3>
+                                <h3 class="heading-title">FACEBOOK</h3>
                             </div>
                             <div class="grid-post">
                                 <div class="item-img">
-                                    <img src="media/figure/ad5.jpg" alt="Post">
+                                    <div class="fb-page" data-href="https://www.facebook.com/OPTIMUSLEAGUE" data-tabs="timeline" data-width="303" data-height="472" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/OPTIMUSLEAGUE" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/OPTIMUSLEAGUE">OPS League</a></blockquote></div>
                                 </div>
                             </div>
                             <div class="list-post">
@@ -322,78 +323,20 @@
                             </div>
                         </div>
                         <div class="row gutters-2">
+                        @foreach ($noticias as $item)                
                             <div class="col-md-6">
                                 <div class="post-grid-layout3 post-grid11">
                                     <div class="post-img">
-                                        <img src="media/post/post37.jpg" alt="Games">
-                                        <div class="item-category bg-green">CSGO</div>
+                                    <img src="{{ url('noticiasimages/'.$item->imagen)}}" alt="Games">
+                                    <div class="item-category bg-green">{{$item->categoria}}</div>
                                     </div>
                                     <div class="post-content">
                                         <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">Action dummy teon text ofprinting type setting games 2018</a></h3>
+                                        <h3 class="post-title"><a href="single-post1.html">{{$item->titulo}}</a></h3>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6">
-                                <div class="post-grid-layout3 post-grid11">
-                                    <div class="post-img">
-                                        <img src="media/post/post38.jpg" alt="Games">
-                                        <div class="item-category bg-dodger-blue">OPS</div>
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">Action dummy teon text ofprinting type setting games 2018</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                                              <div class="col-md-6">
-                                <div class="post-grid-layout3 post-grid11">
-                                    <div class="post-img">
-                                        <img src="media/post/post38.jpg" alt="Games">
-                                        <div class="item-category bg-dodger-blue">OPS</div>
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">Action dummy teon text ofprinting type setting games 2018</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                                              <div class="col-md-6">
-                                <div class="post-grid-layout3 post-grid11">
-                                    <div class="post-img">
-                                        <img src="media/post/post38.jpg" alt="Games">
-                                        <div class="item-category bg-dodger-blue">OPS</div>
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">Action dummy teon text ofprinting type setting games 2018</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="post-grid-layout3 post-grid11">
-                                    <div class="post-img">
-                                        <img src="media/post/post39.jpg" alt="Games">
-                                        <div class="item-category bg-green">CSGO</div>
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">Action dummy teon text ofprinting type setting games 2018</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="post-grid-layout3 post-grid11">
-                                    <div class="post-img">
-                                        <img src="media/post/post40.jpg" alt="Games">
-                                        <div class="item-category bg-amaranth">CS 1.6</div>
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">Action dummy teon text ofprinting type setting games 2018</a></h3>
-                                    </div>
-                                </div>
-                            </div>
+                        @endforeach
                         </div>
                     </div>
                 </div>
@@ -404,79 +347,6 @@
         <!--=====================================-->
 
         <!--=====================================-->
-        <!--=            Post Start           =-->
-        <!--=====================================-->
-    
-        <!--=====================================-->
-        <!--=            Post Start           =-->
-        <!--=====================================-->
-
-        <!--=====================================-->
-        <!--=            Post Start           =-->
-        <!--=====================================-->
-        <section class="post-wrap-layout3">
-            <div class="container">
-                <div class="row gutters-40">
-                    <div class="col-lg-9">
-                        <div class="heading-layout1">
-                            <h2 class="heading-title">Weekly Top Games</h2>
-                            <div class="heading-icon">
-                                <a href="#" class="active"><i class="flaticon-left-arrow-1"></i></a>
-                                <a href="#"><i class="flaticon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                        <div class="row gutters-20">
-                            <div class="col-lg-5">
-                                <div class="post-grid-layout3 post-grid7">
-                                    <div class="post-img">
-                                        <img src="media/post/post29.jpg" alt="Games">
-                                        <div class="item-category bg-green">Mission</div>
-                                    </div>
-                                    <div class="post-content">
-                                        <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">Top 10 Best Computer games in the Markting here.</a></h3>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-7">
-                                <div class="row gutters-20">
-                                    <div class="col-md-6">
-                                        <div class="post-grid-layout2 post-grid8">
-                                            <div class="item-img">
-                                                <img src="media/post/post30.jpg" alt="Post">
-                                            </div>
-                                            <div class="item-content">
-                                                <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                                <h3 class="post-title"><a href="single-post1.html">Computer n the market simply dueyprinting industry.</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="post-grid-layout2 post-grid8">
-                                            <div class="item-img">
-                                                <img src="media/post/post31.jpg" alt="Post">
-                                            </div>
-                                            <div class="item-content">
-                                                <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                                <h3 class="post-title"><a href="single-post1.html">Computer n the market simply dueyprinting industry.</a></h3>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 sidebar-widget">
-                        <div class="widget widget-ad">
-                            <a href="#">
-                                <img src="media/figure/ad5.jpg" alt="Ad">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--=====================================-->
         <!--=            Social Start           =-->
         <!--=====================================-->
         <section class="social-box-wrap">
@@ -484,32 +354,32 @@
                 <div class="row no-gutters">
                     <div class="col-lg-2 col-sm-4 col-6">
                         <div class="social-box-img">
-                            <a href="#"><img src="media/social/social1.png" alt="Social"></a>
+                            <a href="#"><img src="media/social/partner1.png" alt="Social"></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-4 col-6">
                         <div class="social-box-img">
-                            <a href="#"><img src="media/social/social2.png" alt="Social"></a>
+                            <a href="#"><img src="media/social/partner2.png" alt="Social"></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-4 col-6">
                         <div class="social-box-img">
-                            <a href="#"><img src="media/social/social3.png" alt="Social"></a>
+                            <a href="#"><img src="media/social/partner3.png" alt="Social"></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-4 col-6">
                         <div class="social-box-img">
-                            <a href="#"><img src="media/social/social4.png" alt="Social"></a>
+                            <a href="#"><img src="media/social/partner4.png" alt="Social"></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-4 col-6">
                         <div class="social-box-img">
-                            <a href="#"><img src="media/social/social5.png" alt="Social"></a>
+                            <a href="#"><img src="media/social/partner5.png" alt="Social"></a>
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-4 col-6">
                         <div class="social-box-img">
-                            <a href="#"><img src="media/social/social6.png" alt="Social"></a>
+                            <a href="#"><img src="media/social/partner6.png" alt="Social"></a>
                         </div>
                     </div>
                 </div>

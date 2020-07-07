@@ -21,4 +21,5 @@ class ValidacionLoginController extends Controller
         }
         return $request->all();
     }
+    
 }

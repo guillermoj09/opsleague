@@ -45,6 +45,10 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+        'admins' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
     ],
 
     /*
@@ -70,6 +74,10 @@ return [
             'model' => App\Jugadores::class,
         ],
 
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Administrador::class,
+        ],
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
