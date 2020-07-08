@@ -41,7 +41,7 @@
                                     @guest
                                 <li><i class="far fa-user"></i><a onClick = "abrirlogin();">Iniciar sesión</a>&nbsp / &nbsp<a href="{{route('registro')}}"> Registrar</a></li>
                                     @else
-                                    <li>{{ auth('web')->user()->nickname }}</li>
+                                    <li><a href="https://es.pornhub.com/pornstar/lana-rhoades">{{ auth('web')->user()->nickname }}</a></li>
 
                                     @endauth
                                    

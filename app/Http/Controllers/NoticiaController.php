@@ -51,7 +51,7 @@ class NoticiaController extends Controller
         $image = $request->file('imagen');
 
         if($image){
-            $image_path = ttime().$image->getClientOriginalName();
+            $image_path = time().$image->getClientOriginalName();
             \Storage::disk('noticias')->put($image_path,\File::get($image));
             $noticia->imagen = $image_path;
         }
