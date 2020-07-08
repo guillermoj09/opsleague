@@ -1,1 +1,5 @@
-<h1>HOme admin</h1>
+@extends('layouts.layout-admin')
+
+@section('contenido')
+    <h1>Hola</h1>
+@endsection

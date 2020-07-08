@@ -20,7 +20,7 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin\Auth')->group(function
         
     //Login Routes
     Route::get('/login','LoginController@showLoginForm')->name('login');
-    Route::get('/home','LoginController@home')->name('home')->middleware('auth:admins');
+    //Route::get('/home','LoginController@home')->name('home')->middleware('auth:admins');
 
     Route::post('/login','LoginController@login')->name('login');
     Route::post('/logout','LoginController@logout')->name('logout');
@@ -33,6 +33,19 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin\Auth')->group(function
     Route::get('/password/reset/{token}','ResetPasswordController@showResetForm')->name('password.reset');
     Route::post('/password/reset','ResetPasswordController@reset')->name('password.update');
 });
+
+Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
+    Route::get('/home','HomeController@index')->name('home')->middleware('auth:admins');
+    
+});
+
+Route::get('admin/noticias','NoticiaController@index')->name('noticia')->middleware('auth:admins');
+
+Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.create')->middleware('auth:admins');
+
+Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear')->middleware('auth:admins');
+
+
 
 
 

@@ -82,9 +82,6 @@ class LoginController extends Controller
             ->with('status','Admin has been logged out!');
     }
 
-    public function home()
-    {
-        return view('admin.home');
-    }
+    
     
 }
