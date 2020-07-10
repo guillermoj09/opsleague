@@ -45,7 +45,7 @@ Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.cre
 
 Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear')->middleware('auth:admins');
 
-
+Route::get('jugadores/perfil/ver/{id}','Jugador\JugadorController@ver')->name('jugador.ver');
 
 
 

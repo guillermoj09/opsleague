@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="{{asset('dependencies/meanmenu/meanmenu.min.css')}}" type="text/css">
     
         <!-- Custom CSS -->
-        <link rel="stylesheet" href="assets/css/app.css" type="text/css">
+        <link rel="stylesheet" href="{{asset('assets/css/app.css')}}" type="text/css">
         <!-- Google Web Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Rubik:300,300i,400,400i,500,700&display=swap" rel="stylesheet">
         <script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v7.0" nonce="p5e0uipQ"></script>
@@ -41,7 +41,7 @@
                                     @guest
                                 <li><i class="far fa-user"></i><a onClick = "abrirlogin();">Iniciar sesión</a>&nbsp / &nbsp<a href="{{route('registro')}}"> Registrar</a></li>
                                     @else
-                                    <li><a href="https://es.pornhub.com/pornstar/lana-rhoades">{{ auth('web')->user()->nickname }}</a></li>
+                                    <li><a href="{{ url('jugadores/perfil/ver/'.auth("web")->user()->id) }}">{{ auth('web')->user()->nickname }}</a></li>
 
                                     @endauth
                                    
@@ -72,7 +72,7 @@
                     <div class="col-lg-2">
                         <div class="logo-area">
                             <a href="index2.html" class="temp-logo">
-                                <img src="media/main-logo.png" alt="logo" class="img-fluid">
+                                <img src="{{asset('media/main-logo.png')}}" alt="logo" class="img-fluid">
                             </a>
                         </div>
                     </div>
@@ -193,7 +193,7 @@
                     <div class="col-lg-6">
                         <div class="footer-box text-lg-center">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="media/logo.png" alt="logo"></a>
+                                <a href="index.html"><img src="{{asset('media/logo.png')}}" alt="logo"></a>
                             </div>
                             <p>Equipo de jugadores experimentados dedicados a los esports con el objetivo de gestionar torneos profesionales y transparentes para nuestros gamers.</p>
                             
