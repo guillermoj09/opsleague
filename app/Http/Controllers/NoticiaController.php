@@ -47,6 +47,7 @@ class NoticiaController extends Controller
         $noticia->administrador_id = $admin->id;
         $noticia->noticia = $request->input('noticia');
         $noticia->titulo = $request->input('titulo');
+        $noticia->subtitulo = $request->input('subtitulo');
         $noticia->categoria = $request->input('categoria');
         $image = $request->file('imagen');
 
@@ -61,4 +62,46 @@ class NoticiaController extends Controller
         return redirect('admin/noticias');
         
     }
+
+    public function edit($id){
+        
+        $noticia = Noticia::find($id);
+
+        return view('admin.noticias.editar',['noticia'=> $noticia]);
+
+
+    }
+    
+    public function Update(Request $request){
+        $id = $request->id;
+        //return $request->all();
+        $noticia = Noticia::find($id);
+        
+        $noticia->noticia = $request->noticia;
+        $noticia->titulo = $request->titulo;
+        $noticia->subtitulo = $request->subtitulo;
+        $noticia->categoria = $request->categoria;
+        $image = $request->file('imagen');
+
+        if($image){
+            $image_path = time().$image->getClientOriginalName();
+            \Storage::disk('noticias')->put($image_path,\File::get($image));
+            $noticia->imagen = $image_path;
+        }
+
+        $noticia->save();
+
+        return redirect('admin/noticias');        
+       // return var_dump($noticia);
+        //return view('admin.noticias.editar',['noticia'=> $noticia]);
+    }
+
+    public function Delete($id){
+        $noti = Noticia::find($id);
+        $noti->delete();
+       // return $id;
+        return redirect('admin/noticias');
+    }
+    
+
 }

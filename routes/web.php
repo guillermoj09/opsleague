@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -10,12 +9,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/', 'HomeController@index')->name('/');
-
+//REGISTRO JUGADORES
 Route::get('/registro', 'RegisterController@index')->name('registro');
-
-    
 Route::prefix('/admin')->name('admin.')->namespace('Admin\Auth')->group(function(){
         
     //Login Routes
@@ -38,26 +34,21 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
     Route::get('/home','HomeController@index')->name('home')->middleware('auth:admins');
     
 });
-
-Route::get('admin/noticias','NoticiaController@index')->name('noticia')->middleware('auth:admins');
-
-Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.create')->middleware('auth:admins');
-
-Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear')->middleware('auth:admins');
-
+// VER PERFIL JUGADORES
 Route::get('jugadores/perfil/ver/{id}','Jugador\JugadorController@ver')->name('jugador.ver');
-
-
-
+//GUARDADO DE JUGADORES
 Route::post('/registro','RegisterController@save')->name('registro');
-
+//VERIFICACION LOGIN
 Route::post('/validacionLogin', 'ValidacionLoginController@iniciarSesion')->name('validacionLogin');
-
-
 //Route::post('/ValidacionLoginAdmin', 'ValidacionLoginController@iniciarSesion')->name('validacionLogin');
-
 Route::get('/noticiasimages/{filename}',array(
     'as' => 'imageNoticia',
     'uses' =>  'NoticiaController@getImage'
 ));
-
+//CRUD NOTICIAS ADMIN
+Route::get('admin/noticias/edit/{id}','NoticiaController@edit')->middleware('auth:admins');
+Route::post('admin/noticias/edit','NoticiaController@Update');
+Route::get('admin/noticias/delete/{id}','NoticiaController@Delete')->middleware('auth:admins');
+Route::get('admin/noticias','NoticiaController@index')->name('noticia')->middleware('auth:admins');
+Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.create')->middleware('auth:admins');
+Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear');
