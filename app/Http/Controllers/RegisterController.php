@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Jugadores;
+use App\Jugador;
 use Illuminate\Support\Facades\Validator;
 
 
@@ -16,7 +16,7 @@ class RegisterController extends Controller
     public function save(Request $request){
         
         $validator = $this->validate($request, [
-            'email' => 'required|email|unique:jugadores',
+            'email' => 'required|email|unique:jugador',
             'nickname' => 'required',
             'password' => 'required',
             'nickname' => 'required',
@@ -29,13 +29,13 @@ class RegisterController extends Controller
         }
 
         //$jugadores = Jugadores::where('email',$request->email)->first();
-        /*$jugadores = new Jugadores();
+        $jugadores = new Jugador();
         $jugadores->password = bcrypt($request->password);
         $jugadores->email = $request->email;
         $jugadores->nombre_completo = $request->nombrecompleto;
         $jugadores->nickname = $request->nickname;
         $jugadores->save();
-        */
-        return $validator;
+        
+        return view('/');
     }
 }

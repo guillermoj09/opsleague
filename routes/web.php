@@ -52,3 +52,22 @@ Route::get('admin/noticias/delete/{id}','NoticiaController@Delete')->middleware(
 Route::get('admin/noticias','NoticiaController@index')->name('noticia')->middleware('auth:admins');
 Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.create')->middleware('auth:admins');
 Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear');
+
+Route::get('torneo/ver/{id}','TorneoController@show');
+
+use App\Torneo;
+
+Route::get('prueba',function(){
+
+    $torneos = Torneo::all();
+
+    foreach($torneos as $t){
+        echo $t->nombre;
+        foreach($t->comments as $c){
+            echo $c->comment;
+            echo $c->jugador->nickname;
+            
+        }
+    }
+    die();
+});

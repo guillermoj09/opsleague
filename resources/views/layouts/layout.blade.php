@@ -80,12 +80,14 @@
                         <nav id="dropdown" class="template-main-menu">
                             <ul>
                                 <li>
-                                    <a href="#">INICIO</a>
+                                    <a href="/">INICIO</a>
                                 
                                 </li>
                                 <li>
                                     <a href="#">TORNEOS</a>
                                     <ul class="dropdown-menu-col-1">
+                                        @yield('li-torneos')
+                                        <!--
                                         <li>
                                             <a href="single-post1.html">Flash #1 CSGO</a>
                                         </li>
@@ -97,7 +99,7 @@
                                         </li>
                                         <li>
                                             <a href="single-post1.html">Flash CS 1.6</a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </li>
                                 <li>

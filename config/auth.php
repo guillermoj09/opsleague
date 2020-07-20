@@ -71,7 +71,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Jugadores::class,
+            'model' => App\Jugador::class,
         ],
 
         'admins' => [

@@ -1,5 +1,11 @@
 @extends('layouts.layout')
 
+@section('li-torneos')
+    @foreach ($torneos as $n)
+        <li><a href="{{url('torneo/ver/'.$n->id)}}">{{$n->nombre}}</a></li>
+    @endforeach
+@endsection
+
 @section('contenido')
     
 
