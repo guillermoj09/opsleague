@@ -99,61 +99,71 @@
                                 <div class="heading-layout3">
                                     <h3 class="heading-title-md">03 Comments</h3>
                                 </div>
-                                <div class="comment-box">
+                                <div class="comment-box" >
                                     @foreach ($torneo->comments as $comment)
 
-                                        <div class="media">
+                                        <div class="media" style="margin-top:55px">
                                             <div class="item-img">
-                                                <img src="media/post/author2.jpg" alt="logo">
+                                                <img src="{{ url('jugadorimages/'.$comment->jugador->logo)}}" style="height: 105px; width: 105px;" alt="logo">
                                             </div>
                                             <div class="media-body">
                                                 <h4 class="item-title">{{$comment->jugador->nickname}}<span>September 29, 2019</span></h4>
                                                 <p>{{$comment->comment}}</p>
-                                                <a href="#" class="reply-btn">Responder</a>
+                                                
                                             </div>
                                            
                                         </div>
-                                        <div class="comment-box" style="margin-left:45px">
+                                        <div class="comment-box" >
                                             @foreach ($comment->comment_comments as $co_coment)
                                                 
-                                                    <div class="media">
+                                                    <div class="media" style="margin-left:55px">
                                                         <div class="item-img">
-                                                            <img src="media/post/author2.jpg" alt="logo">
+                                                            <img src="{{ url('jugadorimages/'.$co_coment->jugador->logo)}}" style="height: 105px; width: 105px;" alt="logo">
+
                                                         </div>
                                                         <div class="media-body">
                                                             <h4 class="item-title">{{$co_coment->jugador->nickname}}<span>September 29, 2019</span></h4>
                                                             <p>{{$co_coment->comentario}}</p>
                                                         </div>  
                                                     </div>
-                                                
                                             @endforeach
+                                            @if(Auth::guard('web')->check())
+                                                <div class="media" style="margin-left:55px">
+                                                    <div class="item-img">
+                                                        <img src="{{ url('jugadorimages/'.auth("web")->user()->logo) }}" style="height: 105px; width: 105px;" alt="logo">
+                                                    </div>
+                                                    
+                                                    <div class="media-body">
+                                                        <form action="" method="post">
+                                                            <div class="form-group">
+                                                                <textarea class="form-control" placeholder="Write comment..." id="{{$comment->id}}"></textarea>
+                                                                <a onclick="FuncResponder({{$comment->id}},{{auth('web')->user()->id}})"  class="reply-btn2">Responder</a>
+                                                            </div>
+                                                        <form>
+                                                    </div>  
+                                                </div>
+                                            @endif
                                         </div>
                                     @endforeach
-                                </div>
-                            </div>
-                            <div class="comment-form">
-                                <div class="heading-layout3">
-                                    <h3 class="heading-title-md">Leave a Comment</h3>
-                                </div>
-                                <form action="#">
-                                    <div class="row guuters-25">
-                                        <div class="col-lg-4 form-group">
-                                            <input type="text" class="form-control" name="name" placeholder="Name *">
+                                    @if(Auth::guard('web')->check())
+                                    <div class="media"  style="margin-top:55px">
+                                        <div class="item-img">
+                                            <img src="{{ url('jugadorimages/'.auth("web")->user()->logo) }}" style="height: 105px; width: 105px;" alt="logo">
                                         </div>
-                                        <div class="col-lg-4 form-group">
-                                            <input type="email" class="form-control" name="email" placeholder="Email *">
-                                        </div>
-                                        <div class="col-lg-4 form-group">
-                                            <input type="text" class="form-control" name="website" placeholder="Website *">
-                                        </div>
-                                        <div class="col-lg-12 form-group">
-                                            <textarea placeholder="Message" class="textarea form-control" name="message" rows="7" cols="20"></textarea>
-                                        </div>
-                                        <div class="col-lg-12 form-group">
-                                            <button type="submit" class="submit-btn disabled">SUBMIT NOW</button>
-                                        </div>
+                                        <div class="media-body" >                                        
+                                            <div class="form-group">
+                                                <form id="formulario-comentar"  method="post">
+                                                    {{ csrf_field() }}
+                                                    <input type="hidden" value="{{$torneo->id}}" name="id_torneo" id="id_torneo" >
+                                                    <input type="hidden" value="{{auth('web')->user()->id}}" name="id_jugador" id="id_jugador">
+                                                    <textarea class="form-control" placeholder="Escribe commentario..." name="comment" id="comment"></textarea>
+                                                    <input type="button" id="btn-comentar"  value="comentar" >    
+                                                </form>  
+                                            </div>                                                                               
+                                        </div>  
                                     </div>
-                                </form>
+                                     @endif
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -198,15 +208,7 @@
         <!--=====================================-->
         <!--=      Header Search Start          =-->
         <!--=====================================-->
-        <div id="header-search" class="header-search">
-            <button type="button" class="close">×</button>
-            <form class="header-search-form">
-                <input type="search" value="" placeholder="Search here..." />
-                <button type="submit" class="search-btn">
-                    <i class="flaticon-search"></i>
-                </button>
-            </form>
-        </div>
+
 
     </div>
     @stop

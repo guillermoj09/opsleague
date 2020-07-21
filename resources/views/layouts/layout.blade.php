@@ -276,9 +276,50 @@
 <script src="{{asset('dependencies/validator/validator.min.js')}}"></script>
 <script src="{{asset('dependencies/meanmenu/jquery.meanmenu.min.js')}}"></script>
 
+<style>
+    .reply-btn2{
+        color: #ffffff;
+        border-radius: 0.25rem;
+        padding: 0.5rem 1rem;
+        background-color: #8b8b8b;
+        font-size: 0.875rem;
+        line-height: 1;
+        position: absolute;
+        /* top: 0; */
+        right: 0;
+    }
+
+
+
+</style>
     <!-- Custom Js -->
 <script src="{{asset('assets/js/app.js')}}"></script>
 <script>
+
+    function FuncResponder(idComment,idJugador){
+        alert(idJugador);
+        /*$.ajax({
+            url: '/validacionLogin',
+            method: 'POST',
+            data: { coment_id : id},
+            success: function(respuesta) {
+                location.reload();
+            }
+        });*/
+    }
+
+    $("#btn-comentar").click(function(){
+        let formu = $("#formulario-comentar").serialize();
+        console.log(formu);
+        $.ajax({
+            url: '/crearComentario',
+            method: 'POST',
+            data: formu,
+            success: function(respuesta) {
+                console.log(respuesta);
+            }
+        });
+    });
 
     function abrirlogin(){
         $('#exampleModal').modal('show');
@@ -287,10 +328,10 @@
     $("#botonValidar").click(function(){
 
         let formulario = $("#formulario-login").serialize();
-        console.log(formulario);
+        //console.log(formulario);
         $.ajax({
 
-            url: 'validacionLogin',
+            url: '/validacionLogin',
             method: 'POST',
             data: formulario,
             success: function(respuesta) {
@@ -311,6 +352,7 @@
             }
         });
     });
+
 
 </script>
 </html>

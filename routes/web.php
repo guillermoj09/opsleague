@@ -41,19 +41,33 @@ Route::post('/registro','RegisterController@save')->name('registro');
 //VERIFICACION LOGIN
 Route::post('/validacionLogin', 'ValidacionLoginController@iniciarSesion')->name('validacionLogin');
 //Route::post('/ValidacionLoginAdmin', 'ValidacionLoginController@iniciarSesion')->name('validacionLogin');
+
 Route::get('/noticiasimages/{filename}',array(
     'as' => 'imageNoticia',
     'uses' =>  'NoticiaController@getImage'
 ));
+
+Route::get('/jugadorimages/{filename}',array(
+    'as' => 'imageJugador',
+    'uses' =>  'Jugador\JugadorController@getImage'
+));
+
 //CRUD NOTICIAS ADMIN
-Route::get('admin/noticias/edit/{id}','NoticiaController@edit')->middleware('auth:admins');
-Route::post('admin/noticias/edit','NoticiaController@Update');
-Route::get('admin/noticias/delete/{id}','NoticiaController@Delete')->middleware('auth:admins');
-Route::get('admin/noticias','NoticiaController@index')->name('noticia')->middleware('auth:admins');
-Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.create')->middleware('auth:admins');
-Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear');
+
+Route::group(['middleware' => ['auth:admins']], function () {
+
+    Route::get('admin/noticias/edit/{id}','NoticiaController@edit');
+    Route::post('admin/noticias/edit','NoticiaController@Update');
+    Route::get('admin/noticias/delete/{id}','NoticiaController@Delete');
+    Route::get('admin/noticias','NoticiaController@index');
+    Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.create');
+    Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear');
+});
+
 
 Route::get('torneo/ver/{id}','TorneoController@show');
+
+Route::post('/crearComentario','CommentTorneoController@store')->name('crearComentario');
 
 use App\Torneo;
 

@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+use Illuminate\Support\Facades\Auth;
+
 use Symfony\Component\HttpFoundation\Response;
 
 class NoticiaController extends Controller
@@ -35,6 +37,7 @@ class NoticiaController extends Controller
     }
 
     public function crearnuevo(Request $request){
+        
         $validateData = $this->validate($request,[
             'titulo' => 'required',
             'noticia' => 'required',
@@ -43,7 +46,9 @@ class NoticiaController extends Controller
         ]);
         
         $noticia = new Noticia();
-        $admin = \Auth::user();
+        $admin = Auth::user();
+
+
         $noticia->administrador_id = $admin->id;
         $noticia->noticia = $request->input('noticia');
         $noticia->titulo = $request->input('titulo');
