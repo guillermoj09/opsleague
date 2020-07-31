@@ -17,7 +17,6 @@
                         </div>
                     @endif
                     <div class="form-group">
-                    
                     <label for="exampleFormControlInput1">Titulo</label>
                     <input type="hidden" name="id" value="{{$noticia->id}}">
                     <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" value="{{$noticia->titulo}}">

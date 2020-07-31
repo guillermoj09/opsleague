@@ -120,55 +120,21 @@
 
                 </div>
                         <div class="rc-carousel nav-control-layout1" data-loop="true" data-items="30" data-margin="15" data-autoplay="true" data-autoplay-timeout="4000" data-smart-speed="1000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="1" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false" data-r-extra-large="4" data-r-extra-large-nav="true" data-r-extra-large-dots="false">
-                            <div class="post-grid-layout4">
-                                <div class="item-img">
-                                    <img src="media/post/post20.jpg" alt="post">
+                             
+                            @foreach($highlights as $h)
+                                <div class="post-grid-layout4">
+                                    <div class="item-img">
+                                        <img src="media/post/post22.jpg" alt="post">
+                                    </div>
+                                    <div class="popup-video">
+                                    <a class="play-btn popup-youtube"  href="{{$h->link}}">
+                                            <i class="fas fa-play"></i>
+                                        </a>
+                                    </div>
+                                    <div class="item-content">
+                                    </div>
                                 </div>
-                                <div class="popup-video">
-                                    <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=zkG86_Rwla0">
-                                        <i class="fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="item-content">
-                                </div>
-                            </div>
-                            <div class="post-grid-layout4">
-                                <div class="item-img">
-                                    <img src="media/post/post21.jpg" alt="post">
-                                </div>
-                                <div class="popup-video">
-                                    <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=zkG86_Rwla0">
-                                        <i class="fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="item-content">
-                                </div>
-                            </div>
-                            <div class="post-grid-layout4">
-                                <div class="item-img">
-                                    <img src="media/post/post22.jpg" alt="post">
-                                </div>
-                                <div class="popup-video">
-                                    <a class="play-btn popup-youtube" href="https://www.youtube.com/watch?v=zkG86_Rwla0">
-                                        <i class="fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="item-content">
-                                </div>
-                            </div>
-                    
-                             <div class="post-grid-layout4">
-                                <div class="item-img">
-                                    <img src="media/post/post22.jpg" alt="post">
-                                </div>
-                                <div class="popup-video">
-                                    <a class="play-btn popup-youtube"  href='https://www.youtube.com/watch?v=zkG86_Rwla0'>
-                                        <i class="fas fa-play"></i>
-                                    </a>
-                                </div>
-                                <div class="item-content">
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                

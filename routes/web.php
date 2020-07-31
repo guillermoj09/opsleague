@@ -52,7 +52,7 @@ Route::get('/jugadorimages/{filename}',array(
     'uses' =>  'Jugador\JugadorController@getImage'
 ));
 
-//CRUD NOTICIAS ADMIN
+//CRUD ADMIN
 
 Route::group(['middleware' => ['auth:admins']], function () {
 
@@ -62,6 +62,17 @@ Route::group(['middleware' => ['auth:admins']], function () {
     Route::get('admin/noticias','NoticiaController@index');
     Route::get('admin/noticias/crear','NoticiaController@create')->name('noticia.create');
     Route::post('admin/noticias/crear','NoticiaController@crearnuevo')->name('noticia.crear');
+    Route::get('admin/torneos','TorneoController@index');
+    Route::get('admin/torneos/crear','TorneoController@create');
+    Route::post('admin/torneos/crear','TorneoController@store');
+    Route::get('admin/torneos/edit/{id}','TorneoController@edit');
+    Route::post('admin/torneos/edit','TorneoController@Update');
+    Route::get('admin/torneos/delete/{id}','TorneoController@Delete');
+    Route::get('admin/highlight','HighlightController@index');
+    Route::get('admin/highlight/crear','HighlightController@create');
+    Route::post('admin/highlight/crear','HighlightController@store');
+    Route::get('admin/highlight/delete/{id}','HighlightController@Delete');
+    Route::get('admin/highlight/edit/{id}','HighlightController@Edit');
 });
 
 

@@ -15,4 +15,7 @@ class Torneo extends Model
     public function comments(){
         return $this->hasMany('App\CommentTorneo');
     }
+    public function juego(){
+        return $this->belongsTo('App\Juego','juego_id');
+    }
 }
