@@ -36,8 +36,10 @@
                         <label for="exampleFormControlTextarea1">Example textarea</label>
                         <textarea class="form-control" id="noticia" name="noticia" value="{{old('noticia')}}" rows="3"></textarea>
                     </div>
-                    <div class="form-group">
-                        <input type="submit" value="Guardar">
+                    <div class="form-group row">
+                        <div class="offset-sm-11">
+                            <button type="submit" class="btn btn-primary">Crear</button>
+                        </div>
                     </div>
                 </form>
             </div>
