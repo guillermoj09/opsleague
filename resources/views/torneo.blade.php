@@ -139,27 +139,29 @@
                                                                 <textarea class="form-control" placeholder="Write comment..." id="{{$comment->id}}"></textarea>
                                                                 <a onclick="FuncResponder({{$comment->id}},{{auth('web')->user()->id}})"  class="reply-btn2">Responder</a>
                                                             </div>
-                                                        <form>
+                                                        </form>
                                                     </div>  
                                                 </div>
                                             @endif
                                         </div>
                                     @endforeach
+                                    <div id="comentario_nuevo"></div>
                                     @if(Auth::guard('web')->check())
                                     <div class="media"  style="margin-top:55px">
                                         <div class="item-img">
                                             <img src="{{ url('jugadorimages/'.auth("web")->user()->logo) }}" style="height: 105px; width: 105px;" alt="logo">
                                         </div>
-                                        <div class="media-body" >                                        
-                                            <div class="form-group">
-                                                <form id="formulario-comentar"  method="post">
-                                                    {{ csrf_field() }}
+                                        <div class="media-body" >   
+                                            <form action="" id="formulario-comentar"  method="POST">    
+                                                {{ csrf_field() }}                                 
+                                                <div class="form-group">
+                                                    
                                                     <input type="hidden" value="{{$torneo->id}}" name="id_torneo" id="id_torneo" >
                                                     <input type="hidden" value="{{auth('web')->user()->id}}" name="id_jugador" id="id_jugador">
                                                     <textarea class="form-control" placeholder="Escribe commentario..." name="comment" id="comment"></textarea>
-                                                    <input type="button" id="btn-comentar"  value="comentar" >    
-                                                </form>  
-                                            </div>                                                                               
+                                                </div>     
+                                                <input type="button" id="btn-comentar"  value="comentar" > 
+                                            </form>                                                                      
                                         </div>  
                                     </div>
                                      @endif
@@ -181,30 +183,6 @@
         <!--=====================================-->
         <!--=            Sidebar Start          =-->
         <!--=====================================-->
-        <div class="sidebar-nav-menu" id="sidebar-nav">
-            <button class="close-btn sidebar-toggle"><i class="fas fa-times"></i></button>
-            <div class="sidebar-logo">
-                <a href="index.html">
-                    <img src="media/logo.png" alt="Side Logo">
-                </a>
-            </div>
-            <ul class="menu-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="category1.html">Games</a></li>
-                <li><a href="#">Video</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Pages</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-            <ul class="item-social">
-                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
-            </ul>
-        </div>
-
         <!--=====================================-->
         <!--=      Header Search Start          =-->
         <!--=====================================-->

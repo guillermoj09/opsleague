@@ -310,13 +310,14 @@
 
     $("#btn-comentar").click(function(){
         let formu = $("#formulario-comentar").serialize();
-        console.log(formu);
+        //console.log(formu);
         $.ajax({
             url: '/crearComentario',
             method: 'POST',
             data: formu,
             success: function(respuesta) {
                 console.log(respuesta);
+                $("#comentario_nuevo").html(respuesta);
             }
         });
     });
