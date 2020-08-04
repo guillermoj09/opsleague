@@ -22,8 +22,8 @@
                         <tr>
                             <td>{{$item->nombre}}</td>
                             <td>{{$item->link}}</td>
-                            <td>{{$item->juego}}</td>
-                            <td>{{$item->administrador_id}}</td>
+                            <td>{{$item->juego->nombre}}</td>
+                            <td>{{$item->administrador->email}}</td>
                         <td><a href="{{url('admin/highlight/edit/'.$item->id)}}">Editar</a>
                         <a href="{{url('admin/highlight/delete/'.$item->id)}}">Eliminar</a>
                         </td>

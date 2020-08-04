@@ -32,8 +32,9 @@ class HighlightController extends Controller
         $admin = \Auth::user();
         $highlight->administrador_id = $admin->id;
         $highlight->nombre = $request->input('nombre');
-        $highlight->juego = $request->input('juego');
+        $highlight->juego_id = $request->input('juego');
         $highlight->link = $request->input('url');
+       
         $image = $request->file('imagen');
         if($image){
             $image_path = time().$image->getClientOriginalName();
