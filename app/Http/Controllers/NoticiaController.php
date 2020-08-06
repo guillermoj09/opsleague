@@ -26,7 +26,13 @@ class NoticiaController extends Controller
         $file = Storage::disk('noticias')->get($filename);
         return new Response($file,200);
     }
+    public function VerNoticia($id){
+        $noticia = Noticia::find($id);
 
+        return view('noticia',['noticia'=>$noticia]);
+
+    }
+    //ADMIN
     public function index(){
         $listado = Noticia::all();
         return view('admin.noticia', ['noticias' => $listado]);

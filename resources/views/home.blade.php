@@ -124,7 +124,7 @@
                             @foreach($highlights as $h)
                                 <div class="post-grid-layout4">
                                     <div class="item-img">
-                                        <img src="media/post/post22.jpg" alt="post">
+                                    <img src="{{ url('highlightimages/'.$h->imagen)}}" alt="post" style="width:304px; height:222px;">
                                     </div>
                                     <div class="popup-video">
                                     <a class="play-btn popup-youtube"  href="{{$h->link}}">
@@ -299,12 +299,12 @@
                             <div class="col-md-6">
                                 <div class="post-grid-layout3 post-grid11">
                                     <div class="post-img">
-                                    <img src="{{ url('noticiasimages/'.$item->imagen)}}" alt="Games">
+                                    <img src="{{ url('noticiasimages/'.$item->imagen)}}" alt="Games" style="width:300px; height:310px;">
                                     <div class="item-category bg-green">{{$item->categoria}}</div>
                                     </div>
                                     <div class="post-content">
-                                        <div class="post-date"><i class="flaticon-clock"></i> 27 June, 2019</div>
-                                        <h3 class="post-title"><a href="single-post1.html">{{$item->titulo}}</a></h3>
+                                    <div class="post-date"><i class="flaticon-clock"></i> {{Carbon\Carbon::parse($item->created_at)->format('d/m/Y')}}</div>
+                                    <h3 class="post-title"><a href="{{url('noticia/ver/'.$item->id)}}">{{$item->titulo}}</a></h3>
                                     </div>
                                 </div>
                             </div>

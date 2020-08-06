@@ -13,33 +13,39 @@
                             <input type="file" id="file" class="custom-file-input">
                             <span class="custom-file-control">Añadir foto</span>
                         </label>
-                        <a class="btn btn-primary" href="{{url('jugadores/perfil/editar/'.$jugador->id)}}">Editar </a>
+                       
                     </div>
-                    <div class="col-lg-6">
-                        <h6>Nickname</h6>
-                        <p>
-                            {{$jugador->nickname}}
-                        </p>
-                        <h6>Nombre Completo</h6>
-                        <p>
-                            {{$jugador->nombre_completo}}
-                        </p>
-                        <h6>Correo Electrónico</h6>
-                        <p>
-                            {{$jugador->email}}
-                        </p>
-                        <h6>Registrado</h6>
-                        <p>
-                            {{$jugador->created_at}}
-                        </p>
-                        <h6>Pais</h6>
-                        <p>
-                            @if($jugador->pais!=null)
-                                {{$jugador->pais}}  
-                            @else
-                              {{ 'No registrado' }}  
-                            @endif
-                        </p>
+                    <div class="col-lg-4">
+                    <form action="{{url('jugadores/perfil/actualizar')}}" method="post" enctype="multipart/form-data">
+                        {{ csrf_field() }}
+                                @if($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{$error}}</li>                                   
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                            <h6>Nickname</h6>
+                            <p>
+                            <input type="hidden" class="form-control" id="id" name ="id" value="{{$jugador->id}}">
+                            <input type="text" class="form-control" id="nickname" name="nickname" value="{{$jugador->nickname}}">
+                            </p>
+                            <h6>Nombre Completo</h6>
+                            <p>
+                            <input type="text" class="form-control" id="nombre_completo" name="nombre_completo" value="{{$jugador->nombre_completo}}">
+                            </p>
+                            {{--<h6>Password</h6>
+                            <p>
+                            <input type="text" class="form-control" id="password" name="password" value="{{$jugador->password}}">
+                            </p>--}}
+                            <h6>Pais</h6>
+                            <p>
+                            <input type="text" class="form-control" id="pais" name="pais" value="{{$jugador->pais}}">
+                            </p>
+                            <button type="submit" class="btn btn-primary">Guardar</button>
+                        </form>
                     </div>
                 </div>
             </div>

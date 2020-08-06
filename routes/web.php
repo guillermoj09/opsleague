@@ -36,6 +36,9 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
 });
 // VER PERFIL JUGADORES
 Route::get('jugadores/perfil/ver/{id}','Jugador\JugadorController@ver')->name('jugador.ver');
+Route::get('jugadores/perfil/editar/{id}','Jugador\JugadorController@editarJugador');
+Route::post('jugadores/perfil/actualizar','Jugador\JugadorController@Update');
+
 //GUARDADO DE JUGADORES
 Route::post('/registro','RegisterController@save')->name('registro');
 //VERIFICACION LOGIN
@@ -45,6 +48,11 @@ Route::post('/validacionLogin', 'ValidacionLoginController@iniciarSesion')->name
 Route::get('/noticiasimages/{filename}',array(
     'as' => 'imageNoticia',
     'uses' =>  'NoticiaController@getImage'
+));
+
+Route::get('/highlightimages/{filename}',array(
+    'as' => 'imageHighlight',
+    'uses' =>  'HighlightController@getImage'
 ));
 
 Route::get('/jugadorimages/{filename}',array(
@@ -73,6 +81,7 @@ Route::group(['middleware' => ['auth:admins']], function () {
     Route::post('admin/highlight/crear','HighlightController@store');
     Route::get('admin/highlight/delete/{id}','HighlightController@Delete');
     Route::get('admin/highlight/edit/{id}','HighlightController@Edit');
+    Route::post('admin/highlight/edit/','HighlightController@Update');
 });
 
 
@@ -96,3 +105,6 @@ Route::get('prueba',function(){
     }
     die();
 });
+
+//RUTAS NOTICIAS 
+Route::get('noticia/ver/{id}','NoticiaController@VerNoticia');

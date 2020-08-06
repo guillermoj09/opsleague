@@ -71,7 +71,7 @@
                 <div class="row no-gutters align-items-center">
                     <div class="col-lg-2">
                         <div class="logo-area">
-                            <a href="index2.html" class="temp-logo">
+                            <a href="{{url('/')}}" class="temp-logo">
                                 <img src="{{asset('media/main-logo.png')}}" alt="logo" class="img-fluid">
                             </a>
                         </div>

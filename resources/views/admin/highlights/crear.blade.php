@@ -18,7 +18,7 @@
                     @endif
                     <div class="form-group">
                     <label for="exampleFormControlInput1">nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" value="#">
+                    <input type="text" class="form-control" id="nombre" name="nombre" value="">
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlInput1">Juego:</label>

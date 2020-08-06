@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\Response;
+
 use App\Juego;
 use App\Jugador;
 use App\Highlight;
@@ -14,6 +17,11 @@ class HighlightController extends Controller
         $listadoHighlight = Highlight::all();
         return view('admin.highlight',['listadoHighlight' =>$listadoHighlight]);
     }
+    public function getImage($filename){
+        $file = Storage::disk('highlights')->get($filename);
+        return new Response($file,200);
+    }
+
     public function create(){
         $juegos = Juego::all();
         $jugadores = Jugador::all();
