@@ -9,7 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index')->name('/');
+Route::get('/', 'HomeController@index')->name('index');
 //REGISTRO JUGADORES
 Route::get('/registro', 'RegisterController@index')->name('registro');
 Route::prefix('/admin')->name('admin.')->namespace('Admin\Auth')->group(function(){

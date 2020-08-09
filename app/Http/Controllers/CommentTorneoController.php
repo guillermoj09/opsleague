@@ -10,19 +10,20 @@ class CommentTorneoController extends Controller
 {
     public function store(Request $request){
 
-        
         $commentTorneo = new CommentTorneo();
 
         $commentTorneo->comment = $request->comment;
         $commentTorneo->torneo_id = $request->id_torneo;
         $commentTorneo->jugador_id = $request->id_jugador;
         $commentTorneo->save();
-
-        $resultado = "<div class='media' style='margin-left:55px'><div class='item-img'>".
-        "<img src='{{ url('jugadorimages/'.auth('web')->user()->logo) }}' style='height: 105px; width: 105px;' alt='logo'></div>".                                                
-        "<div class='media-body'><h4 class='item-title'>asdadas<span>September 29, 2019</span></h4>".
-        "<p>asdad</p> </div> </div>";
-
+        $logo = $commentTorneo->jugador->logo;
+        $nickname = $commentTorneo->jugador->nickname;
+        
+        $resultado = "<div class='media'><div class='item-img'>".
+        "<img src='/jugadorimages/$logo' style='height: 105px; width: 105px;' alt='logo'></div>".                                                
+        "<div class='media-body'><h4 class='item-title'>$nickname<span>September 29, 2019</span></h4>".
+        "<p>$commentTorneo->comment</p> </div> </div>";
+       
         return $resultado;
     }
 }

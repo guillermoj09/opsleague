@@ -15,11 +15,11 @@ class RegisterController extends Controller
 
     public function save(Request $request){
         
-        $validator = $this->validate($request, [
+        $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:jugador',
             'nickname' => 'required',
-            'password' => 'required',
-            'nickname' => 'required',
+            'password' => 'required'
+           
         ]);
         
         if ($validator->fails()) {
@@ -36,6 +36,6 @@ class RegisterController extends Controller
         $jugadores->nickname = $request->nickname;
         $jugadores->save();
         
-        return view('/');
+        return redirect('/');
     }
 }
