@@ -7,7 +7,7 @@
             <div class="col-xl-9 col-lg-8">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="//placehold.it/150" class="m-x-auto img-fluid img-circle" alt="avatar">
+                        <img src="{{url('jugadorimages/'.$jugador->logo)}}" class="m-x-auto img-fluid img-circle" alt="avatar">
                         <h6 class="m-t-2">Upload a different photo</h6>
                         <label class="custom-file">
                             <input type="file" id="file" class="custom-file-input">
@@ -42,7 +42,12 @@
                             </p>--}}
                             <h6>Pais</h6>
                             <p>
-                            <input type="text" class="form-control" id="pais" name="pais" value="{{$jugador->pais}}">
+                            <select type="text" class="form-control" id="pais" name="pais">
+                                <option value="Chile">Chile</option>
+                                <option value="Perú">Perú</option>
+                                <option value="Bolivia">Bolivia</option>
+                                <option value="Argentina">Argentina</option>
+                            </select>
                             </p>
                             <button type="submit" class="btn btn-primary">Guardar</button>
                         </form>

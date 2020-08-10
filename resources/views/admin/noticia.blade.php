@@ -24,7 +24,7 @@
                             <td>{{$item->titulo}}</td>
                             <td>{{$item->subtitulo}}</td>
                             <td>{{$item->categoria}}</td>
-                            <td>{{$item->noticia}}</td>
+                            <td>{{$item->parrafo_1." // ".$item->parrafo_2}}</td>
                         <td><a href="{{url('admin/noticias/edit/'.$item->id)}}" class="btn btn-link">Editar</a>
                             <a href="{{url('admin/noticias/delete/'.$item->id)}}" class="btn btn-link">Eliminar</a>
                         </td>

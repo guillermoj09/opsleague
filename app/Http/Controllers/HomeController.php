@@ -18,4 +18,7 @@ class HomeController extends Controller
         $listadoTorneos = Torneo::all();
         return view('home', ['noticias' => $listadoNoticias,'torneos' => $listadoTorneos,'highlights'=>$listadoHighlights]);
     }
+    public function AdminHome(){
+        return view('admin.home');
+    }
 }

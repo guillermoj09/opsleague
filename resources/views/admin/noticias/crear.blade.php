@@ -29,12 +29,20 @@
                         <input type="text" class="form-control" id="categoria" name="categoria" value="{{old('categoria')}}" placeholder="Categoria">
                     </div>
                     <div class="form-group">
-                        <label for="imagen">Example file input</label>
-                        <input type="file" class="form-control-file" id="imagen" name="imagen">
-                      </div>
+                        <label for="imagen">Portada</label>
+                        <input type="file" class="form-control-file" id="imagen1" name="imagen1">
+                    </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Example textarea</label>
-                        <textarea class="form-control" id="noticia" name="noticia" value="{{old('noticia')}}" rows="3"></textarea>
+                        <label for="exampleFormControlTextarea1">Parrafo 1</label>
+                        <textarea class="form-control" id="parrafo1" name="parrafo1" value="{{old('parrafo1')}}" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="imagen">Imagen 2</label>
+                        <input type="file" class="form-control-file" id="imagen2" name="imagen2">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Parrafo 2</label>
+                        <textarea class="form-control" id="parrafo2" name="parrafo2" value="{{old('parrafo2')}}" rows="3"></textarea>
                     </div>
                     <div class="form-group row">
                         <div class="offset-sm-11">

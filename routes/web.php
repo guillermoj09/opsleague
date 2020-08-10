@@ -45,16 +45,17 @@ Route::post('/registro','RegisterController@save')->name('registro');
 Route::post('/validacionLogin', 'ValidacionLoginController@iniciarSesion')->name('validacionLogin');
 //Route::post('/ValidacionLoginAdmin', 'ValidacionLoginController@iniciarSesion')->name('validacionLogin');
 
+//OBTENER IMAGEN NOTICIAS
 Route::get('/noticiasimages/{filename}',array(
     'as' => 'imageNoticia',
     'uses' =>  'NoticiaController@getImage'
 ));
-
+//OBTENER IMAGEN HIGHLIGHT
 Route::get('/highlightimages/{filename}',array(
     'as' => 'imageHighlight',
     'uses' =>  'HighlightController@getImage'
 ));
-
+//OBTENER IMAGEN JUGADOR
 Route::get('/jugadorimages/{filename}',array(
     'as' => 'imageJugador',
     'uses' =>  'Jugador\JugadorController@getImage'
@@ -63,7 +64,7 @@ Route::get('/jugadorimages/{filename}',array(
 //CRUD ADMIN
 
 Route::group(['middleware' => ['auth:admins']], function () {
-
+    Route::get('admin/home','HomeController@AdminHome');
     Route::get('admin/noticias/edit/{id}','NoticiaController@edit');
     Route::post('admin/noticias/edit','NoticiaController@Update');
     Route::get('admin/noticias/delete/{id}','NoticiaController@Delete');

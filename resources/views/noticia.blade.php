@@ -48,12 +48,15 @@
                                     
                                     </div>
                                 </div>
-                            <p> {{$noticia->noticia}}</p>
+                            <p> {{$noticia->parrafo_1}}</p>
                                 <p></p>
                                 <blockquote>
                                     {{$noticia->subtitulo}}
                                 </blockquote>
-                                <p></p>
+                            
+                                <img src="{{ url('noticiasimages/'.$noticia->imagen_1)}}" alt="Games" style="width:300px; height:310px;">
+                                <p>{{$noticia->parrafo_2}}</p>
+                                <img src="{{ url('noticiasimages/'.$noticia->imagen_2)}}" alt="Games" >
                                 {{--<ul class="related-tag">
                                     <li><a href="#">Action</a></li>
                                     <li><a href="#">Racing</a></li>

@@ -299,7 +299,7 @@
                             <div class="col-md-6">
                                 <div class="post-grid-layout3 post-grid11">
                                     <div class="post-img">
-                                    <img src="{{ url('noticiasimages/'.$item->imagen)}}" alt="Games" style="width:300px; height:310px;">
+                                    <img src="{{ url('noticiasimages/'.$item->imagen_1)}}" alt="Games" style="width:300px; height:310px;">
                                     <div class="item-category bg-green">{{$item->categoria}}</div>
                                     </div>
                                     <div class="post-content">
