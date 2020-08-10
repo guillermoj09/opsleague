@@ -9,7 +9,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', 'HomeController@index')->name('/');
+Route::get('/', 'HomeController@index')->name('index');
 //REGISTRO JUGADORES
 Route::get('/registro', 'RegisterController@index')->name('registro');
 Route::prefix('/admin')->name('admin.')->namespace('Admin\Auth')->group(function(){
@@ -61,6 +61,13 @@ Route::get('/jugadorimages/{filename}',array(
     'uses' =>  'Jugador\JugadorController@getImage'
 ));
 
+Route::get('/torneoimages/{filename}',array(
+    'as' => 'imagetorneo',
+    'uses' =>  'Jugador\JugadorController@getImage'
+));
+
+
+Route::post('jugador/logout','Jugador\JugadorController@logout');
 //CRUD ADMIN
 
 Route::group(['middleware' => ['auth:admins']], function () {
@@ -85,6 +92,7 @@ Route::group(['middleware' => ['auth:admins']], function () {
     Route::post('admin/highlight/edit/','HighlightController@Update');
 });
 
+Route::get('/contacto','ContactoController@index');
 
 Route::get('torneo/ver/{id}','TorneoController@show');
 

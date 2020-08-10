@@ -29,6 +29,7 @@
                         <input type="text" class="form-control" id="categoria" name="categoria" value="{{old('categoria')}}" placeholder="Categoria">
                     </div>
                     <div class="form-group">
+<<<<<<< HEAD
                         <label for="imagen">Portada</label>
                         <input type="file" class="form-control-file" id="imagen1" name="imagen1">
                     </div>
@@ -39,6 +40,10 @@
                     <div class="form-group">
                         <label for="imagen">Imagen 2</label>
                         <input type="file" class="form-control-file" id="imagen2" name="imagen2">
+=======
+                        <label for="imagen">Example file input</label>
+                        <input type="file" class="form-control-file" id="imagen" name="imagen">
+>>>>>>> b8f4f899f07687f0fb9333d806e9707b4673ed67
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Parrafo 2</label>

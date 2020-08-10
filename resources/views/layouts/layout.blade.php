@@ -53,7 +53,17 @@
                     <div class="col-lg-4 d-flex justify-content-end">
                         <div class="header-topbar-layout1">
                             <div class="header-top-right">
+                                
                                 <ul class="social-icon">
+                                    @if(Auth::guard('web')->check())
+                                        <li>
+                                            <form action="{{ url('jugador/logout')}}" method="post" id="myform">
+                                                {{ csrf_field() }}
+                                                <a href="#" onclick="document.getElementById('myform').submit()">Cerrar Sesion</a>
+                                            </form>
+                                            
+                                        </li>
+                                    @endif
                                     <li><a href="https://www.facebook.com/OPTIMUSLEAGUE"><i class="fab fa-facebook-f"></i></a></li>
                                     <li><a href="https://www.instagram.com/opsleague/"><i class="fab fa-instagram"></i></a></li>
                                     <li><a href="https://www.youtube.com/channel/UCztOgB0QyMXHKrkB92tbISA"><i class="fab fa-youtube"></i></a></li>
@@ -140,7 +150,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="contact.html">CONTACTO</a>
+                                <a href="{{url('/contacto')}}">CONTACTO</a>
                                 </li>
                             </ul>
                         </nav>

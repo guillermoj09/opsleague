@@ -33,6 +33,10 @@
                         <input class="form-control" type="number" value="2" min="2" id="teams">
                       </div>
                     <div class="form-group">
+                        <label for="imagen">Example file input</label>
+                        <input type="file" class="form-control-file" id="imagen" name="imagen">
+                    </div>  
+                    <div class="form-group">
                         <label for="example-date-input">Fecha inicio:</label>
                     <input class="form-control" type="date" id="fechaInicio" name="fechaInicio" value="{{ date('d-m-Y') }}">
                     </div>

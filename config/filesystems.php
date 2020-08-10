@@ -69,6 +69,14 @@ return [
             'visibility' => 'public',
         ],
 
+        'torneos' => [
+            'driver' => 'local',
+            'root' => storage_path('app/torneos'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
+
+
         'highlights' => [
             'driver' => 'local',
             'root' => storage_path('app/highlights'),
