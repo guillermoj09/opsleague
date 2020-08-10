@@ -46,6 +46,13 @@ class TorneoController extends Controller
         //falta teams
         $torneo->fecha_comienzo = $request->input('fechaInicio');
         $torneo->descripcion = $request->input('descripcionTorneo');
+
+        $image = $request->file('imagen');
+        if($image){
+            $image_path = time().$image->getClientOriginalName();
+            \Storage::disk('torneos')->put($image_path,\File::get($image));
+            $torneo->imagen = $image_path;
+        }
         $torneo->save();
 
         return redirect('admin/torneos');

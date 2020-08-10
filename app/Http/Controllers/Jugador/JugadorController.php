@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Http\Request;
 use App\Jugador;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;    
 
 class JugadorController extends Controller
 {
@@ -37,6 +38,14 @@ class JugadorController extends Controller
         $jugador->save();
         return redirect('/jugadores/perfil/ver/'.$id);
 
+
+    }
+
+    public function logout(Request $request){
+        Auth::guard('web')->logout();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect('/');
 
     }
 

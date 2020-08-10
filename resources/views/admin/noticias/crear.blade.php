@@ -31,7 +31,7 @@
                     <div class="form-group">
                         <label for="imagen">Example file input</label>
                         <input type="file" class="form-control-file" id="imagen" name="imagen">
-                      </div>
+                    </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Example textarea</label>
                         <textarea class="form-control" id="noticia" name="noticia" value="{{old('noticia')}}" rows="3"></textarea>
