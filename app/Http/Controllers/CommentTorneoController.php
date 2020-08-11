@@ -10,6 +10,7 @@ class CommentTorneoController extends Controller
 {
     public function store(Request $request){
 
+        
         $commentTorneo = new CommentTorneo();
 
         $commentTorneo->comment = $request->comment;
@@ -18,7 +19,6 @@ class CommentTorneoController extends Controller
         $commentTorneo->save();
         $logo = $commentTorneo->jugador->logo;
         $nickname = $commentTorneo->jugador->nickname;
-        
         $resultado = "<div class='media'><div class='item-img'>".
         "<img src='/jugadorimages/$logo' style='height: 105px; width: 105px;' alt='logo'></div>".                                                
         "<div class='media-body'><h4 class='item-title'>$nickname<span>September 29, 2019</span></h4>".

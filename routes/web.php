@@ -98,6 +98,9 @@ Route::get('torneo/ver/{id}','TorneoController@show');
 
 Route::post('/crearComentario','CommentTorneoController@store')->name('crearComentario');
 
+Route::post('/crearRespuesta','CommentComentController@store')->name('crearRespuesta');
+
+
 use App\Torneo;
 
 Route::get('prueba',function(){
