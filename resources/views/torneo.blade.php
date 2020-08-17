@@ -114,8 +114,12 @@
                                            
                                         </div>
                                         <div class="comment-box" >
+                                            <?php $count = 0;?>
                                             @foreach ($comment->comment_comments as $co_coment)
-                                                
+                                            @if ($elem === reset($miArray)) {
+                                            
+
+                                            @endif    
                                                     <div class="media" style="margin-left:55px">
                                                         <div class="item-img">
                                                             <img src="{{ url('jugadorimages/'.$co_coment->jugador->logo)}}" style="height: 75px; width:75px;" alt="logo">
@@ -127,7 +131,8 @@
                                                             
                                                         </div>  
                                                     </div>
-                                                         
+                                               
+                                                $count++;     
                                             @endforeach
                                             <div id="capadiv-{{$comment->id}}"></div>
                                             @if(Auth::guard('web')->check())

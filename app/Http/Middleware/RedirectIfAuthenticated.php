@@ -23,10 +23,13 @@ class RedirectIfAuthenticated
                     return redirect('admin/login');
                 }
                 break;
-            default:
+            case 'web':
                 if (Auth::guard($guard)->check()) {
-                    return redirect('/home');
+                    return redirect('/');
                 }
+                break;
+            default:
+               
             break;
         }
         

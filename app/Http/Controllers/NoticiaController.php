@@ -127,6 +127,10 @@ class NoticiaController extends Controller
        // return $id;
         return redirect('admin/noticias');
     }
+
+    public function prubea(){
+        return "hola pepe";
+    }
     
 
 }
