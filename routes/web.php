@@ -22,12 +22,12 @@ Route::prefix('/admin')->name('admin.')->namespace('Admin\Auth')->group(function
     Route::post('/logout','LoginController@logout')->name('logout');
 
     //Forgot Password Routes
-    Route::get('/password/reset','ForgotPasswordController@showLinkRequestForm')->name('password.request');
-    Route::post('/password/email','ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    //Route::get('/password/reset','ForgotPasswordController@showLinkRequestForm')->name('password.request');
+    //Route::post('/password/email','ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 
     //Reset Password Routes
-    Route::get('/password/reset/{token}','ResetPasswordController@showResetForm')->name('password.reset');
-    Route::post('/password/reset','ResetPasswordController@reset')->name('password.update');
+    //Route::get('/password/reset/{token}','ResetPasswordController@showResetForm')->name('password.reset');
+    //Route::post('/password/reset','ResetPasswordController@reset')->name('password.update');
 });
 
 Route::prefix('/admin')->name('admin.')->namespace('Admin')->group(function(){
@@ -74,6 +74,12 @@ Route::get('/carrusel/{filename}',array(
 
 Route::post('jugador/logout','Jugador\JugadorController@logout');
 //CRUD ADMIN
+
+    Route::get('/password/reset','Auth\ForgotPasswordController@showLinkRequestForm')->name('password.reset');
+    Route::post('/password/email','Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+    Route::get('/password/reset/{token}','Auth\ResetPasswordController@showResetForm')->name('password.reset');
+    Route::post('/password/reset','Auth\ResetPasswordController@reset')->name('password.update');
+
 
 Route::group(['middleware' => ['auth:admins']], function () {
     Route::get('admin/home','HomeController@AdminHome');

@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use App\Notifications\ResetPasswordNotification;
 
 class Jugador extends Authenticatable
 {
@@ -15,4 +16,8 @@ class Jugador extends Authenticatable
     protected $hidden = [
         'password'
     ];
+
+    public function sendPasswordResetNotification($token){
+        $this->notify(new ResetPasswordNotification($token));
+    }
 }

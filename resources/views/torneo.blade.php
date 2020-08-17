@@ -91,37 +91,44 @@
                                                 <img src="{{ url('jugadorimages/'.$comment->jugador->logo)}}" style="height: 105px; width: 105px;" alt="logo">
                                             </div>
                                             <div class="media-body">
-                                                <h4 class="item-title">{{$comment->jugador->nickname}}<span>September 29, 2019</span></h4>
+                                                <h4 class="item-title">{{$comment->jugador->nickname}}<span>{{Carbon\Carbon::parse($comment->created_at)->format('d/m/Y H:i:s')}}</span></h4>
                                                 <p>{{$comment->comment}}</p>
                                             </div>
                                         </div>
                                         <div class="comment-box" >
+                                            <?php $count = 0;?>
                                             @foreach ($comment->comment_comments as $co_coment)
                                                     <div class="media" style="margin-left:55px">
                                                         <div class="item-img">
-                                                            <img src="{{ url('jugadorimages/'.$co_coment->jugador->logo)}}" style="height: 105px; width: 105px;" alt="logo">
+                                                            <img src="{{ url('jugadorimages/'.$co_coment->jugador->logo)}}" style="height: 75px; width:75px;" alt="logo">
 
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="item-title">{{$co_coment->jugador->nickname}}<span>September 29, 2019</span></h4>
+                                                            <h4 class="item-title">{{$co_coment->jugador->nickname}}<span></span></h4>
                                                             <p>{{$co_coment->comentario}}</p>
+                                                            
                                                         </div>  
                                                     </div>
+                                               
+                                                $count++;     
                                             @endforeach
+                                            <div id="capadiv-{{$comment->id}}"></div>
                                             @if(Auth::guard('web')->check())
-                                                <div class="media" style="margin-left:55px">
-                                                    <div class="item-img">
-                                                        <img src="{{ url('jugadorimages/'.auth("web")->user()->logo) }}" style="height: 105px; width: 105px;" alt="logo">
-                                                    </div>
-                                                    
-                                                    <div class="media-body">
-                                                        <form action="" method="post">
+                                                <div style="display: none;" id="divRespuesta-{{$comment->id}}" >      
+                                                    <div class="media" style="margin-left:55px;">
+                                                        <div class="item-img">
+                                                            <img src="{{ url('jugadorimages/'.auth("web")->user()->logo) }}" style="height: 75px; width: 75px;" alt="logo">
+                                                        </div>
+                                                        
+                                                        <div class="media-body">
+                                                        
                                                             <div class="form-group">
-                                                                <textarea class="form-control" placeholder="Write comment..." id="{{$comment->id}}"></textarea>
+                                                                <textarea class="form-control" placeholder="Responder.." id="respuesta-{{$comment->id}}" name="respuesta-{{$comment->id}}"></textarea>
                                                                 <a onclick="FuncResponder({{$comment->id}},{{auth('web')->user()->id}})"  class="reply-btn2">Responder</a>
                                                             </div>
-                                                        </form>
-                                                    </div>  
+                                                            
+                                                        </div>  
+                                                    </div>
                                                 </div>
                                             @endif
                                         </div>

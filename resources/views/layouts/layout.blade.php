@@ -307,27 +307,43 @@
 <script>
 
     function FuncResponder(idComment,idJugador){
-        alert(idJugador);
-        /*$.ajax({
-            url: '/validacionLogin',
+        
+        console.log(idComment);
+        
+        var message = $('#respuesta-'+idComment).val();
+        console.log(message);
+        $.ajax({
+            url: '/crearRespuesta',
             method: 'POST',
-            data: { coment_id : id},
-            success: function(respuesta) {
-                location.reload();
-            }
-        });*/
+            data: { "_token": "{{ csrf_token() }}",
+                    coment_id : idComment,
+                    comentario_resp : message, 
+                    id_jugador : idJugador}
+            
+        }).done(function (data) {
+            console.log(data);
+            console.log("ad"+idComment);
+            $('#capadiv-'+idComment).append(data);
+        })
+        
+
+        return false;
+    }
+
+    function mostrarFormResp(id){
+        $("#divRespuesta-"+id).css("display", "block");
+
     }
 
     $("#btn-comentar").click(function(){
         let formu = $("#formulario-comentar").serialize();
-        //console.log(formu);
         $.ajax({
             url: '/crearComentario',
             method: 'POST',
             data: formu,
             success: function(respuesta) {
-                console.log(respuesta);
-                $("#comentario_nuevo").html(respuesta);
+                //console.log(respuesta);
+                $("#comentario_nuevo").append(respuesta);
             }
         });
     });

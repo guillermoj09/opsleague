@@ -25,7 +25,9 @@
                   
                 </div>
                 <button class="btn btn-danger btn-block" type="button" id="botonValidar">Acceder</button>
-
+                <div class="form-group">
+                <label for="olvidate"><a href="{{ url('password/reset')}}">¿ Olvidaste tu contraseña ? </a></label> 
+                </div>
             </form>
             </div>
 
