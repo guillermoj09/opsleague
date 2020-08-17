@@ -155,7 +155,7 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="col-lg-2 d-flex justify-content-end">
+                    <!--<div class="col-lg-2 d-flex justify-content-end">
                         <div class="header-action-layout1">
                             <ul>
                                 <li class="search-btn">
@@ -172,7 +172,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </div>
@@ -205,7 +205,7 @@
                     <div class="col-lg-6">
                         <div class="footer-box text-lg-center">
                             <div class="footer-logo">
-                                <a href="index.html"><img src="{{asset('media/logo.png')}}" alt="logo"></a>
+                            <a href="{{url('/')}}"><img src="{{asset('media/main-logo.png')}}" alt="logo"></a>
                             </div>
                             <p>Equipo de jugadores experimentados dedicados a los esports con el objetivo de gestionar torneos profesionales y transparentes para nuestros gamers.</p>
                             
@@ -241,8 +241,8 @@
     <div class="sidebar-nav-menu" id="sidebar-nav">
         <button class="close-btn sidebar-toggle"><i class="fas fa-times"></i></button>
         <div class="sidebar-logo">
-            <a href="index.html">
-                <img src="media/logo.png" alt="Side Logo">
+        <a href="{{url('/')}}">
+                <img src="media/main-logo.png" alt="Side Logo">
             </a>
         </div>
         <ul class="menu-list">

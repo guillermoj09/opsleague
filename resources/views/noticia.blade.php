@@ -38,7 +38,7 @@
                                                         </div>
                                                         <div class="author-content">
                                                             <div class="item-text">Posteado por:</div>
-                                                        <div class="author-name"><a href="#">{{$noticia->administrador->email}}</a></div>
+                                                        <div class="author-name"><a>{{$noticia->administrador->email}}</a></div>
                                                         </div>
                                                     </li>
                                                     <div class="post-date"><i class="flaticon-clock"></i> {{Carbon\Carbon::parse($noticia->created_at)->format('d/m/Y H:i:s')}}</div>
@@ -56,7 +56,42 @@
                             
                                 <img src="{{ url('noticiasimages/'.$noticia->imagen_1)}}" alt="Games" style="width:300px; height:310px;">
                                 <p>{{$noticia->parrafo_2}}</p>
-                                <img src="{{ url('noticiasimages/'.$noticia->imagen_2)}}" alt="Games" >
+                                <img src="{{ url('noticiasimages/'.$noticia->imagen_2)}}" alt="Games" style="width:300px; height:310px;" >
+                                
+                                {{--CARRUSEL--}}
+                                <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        @foreach ($noticia->noticiasImages as $noticiaImage)
+                                            @if ($loop->first)
+                                                <div class="carousel-item active">
+                                                    <img src="{{ url('carrusel/'.$noticiaImage->url_imagen)}}" class="d-block w-100" alt="...">
+                                                </div>
+                                            @else
+                                                <div class="carousel-item">
+                                                    <img src="{{ url('carrusel/'.$noticiaImage->url_imagen)}}" class="d-block w-100" alt="...">
+                                                </div>
+                                            @endif
+                                        @endforeach
+                                    <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Anterior</span>
+                                    </a>
+                                    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                      <span class="sr-only">Siguiente</span>
+                                    </a>
+                                  </div>
+
+
+                                  {{--@foreach ($noticia->noticiasImages as $noticiaImage)
+                                  @if ($loop->first) First Item:
+                                        {{$noticiaImage->url_imagen}}
+                                       @else
+                                       {{$noticiaImage->url_imagen}}
+                                       @endif
+                                        @endforeach --}}
+
+
                                 {{--<ul class="related-tag">
                                     <li><a href="#">Action</a></li>
                                     <li><a href="#">Racing</a></li>

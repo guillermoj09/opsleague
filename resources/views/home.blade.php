@@ -14,7 +14,7 @@
 	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   	<![endif]-->
     <!-- Preloader Start Here -->
-    <div id="preloader"></div>
+    <div id="preloader" img="media/main-logo.png"></div>
     <!-- Preloader End Here -->
     <!-- Back To Top Start Here -->
     <a href="#main-wrapper" data-type="section-switch" class="scrollup">
@@ -117,8 +117,7 @@
         <div class="container">
         <div class="heading-layout1">
                     <h2 class="heading-title">HIGHLIGHTS</h2>
-
-                </div>
+        </div>
                         <div class="rc-carousel nav-control-layout1" data-loop="true" data-items="30" data-margin="15" data-autoplay="true" data-autoplay-timeout="4000" data-smart-speed="1000" data-dots="false" data-nav="true" data-nav-speed="false" data-r-x-small="1" data-r-x-small-nav="true" data-r-x-small-dots="false" data-r-x-medium="1" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="2" data-r-small-nav="true" data-r-small-dots="false" data-r-medium="3" data-r-medium-nav="true" data-r-medium-dots="false" data-r-large="3" data-r-large-nav="true" data-r-large-dots="false" data-r-extra-large="4" data-r-extra-large-nav="true" data-r-extra-large-dots="false">
                              
                             @foreach($highlights as $h)
@@ -158,7 +157,7 @@
                                 </div>
                                 <div class="media mb-0 pb-0 border-0">
                                     <div class="item-img">
-                                       
+    
                                     </div>
                                   
                                 </div>
@@ -189,7 +188,7 @@
                         </div>
                     </div>
 
-                    <div class="col-xl-3 col-lg-12 col-md-6 order-lg-3">
+                    <!--<div class="col-xl-3 col-lg-12 col-md-6 order-lg-3">
                         <div class="heading-layout1">
                             <h2 class="heading-title">TORNEOS</h2>
 
@@ -287,7 +286,7 @@
                                             </div>
                                         </div>
                                     </div>
-                    </div>
+                    </div>-->
                     <div class="col-xl-6 col-lg-8 col-md-12 order-lg-2">
                         <div class="heading-layout1">
                             <h2 class="heading-title">NOTICIAS</h2>

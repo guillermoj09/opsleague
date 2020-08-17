@@ -68,6 +68,12 @@ return [
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],
+        'noticiasimages' => [
+            'driver' => 'local',
+            'root' => storage_path('app/noticiasimages'),
+            'url' => env('APP_URL').'/storage',
+            'visibility' => 'public',
+        ],
 
         'torneos' => [
             'driver' => 'local',

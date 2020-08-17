@@ -7,13 +7,8 @@
             <div class="col-xl-9 col-lg-8">
                 <div class="row">
                     <div class="col-lg-6">
-                        <img src="//placehold.it/150" class="m-x-auto img-fluid img-circle" alt="avatar">
-                        <h6 class="m-t-2">Upload a different photo</h6>
-                        <label class="custom-file">
-                            <input type="file" id="file" class="custom-file-input">
-                            <span class="custom-file-control">Añadir foto</span>
-                        </label>
-                        <a class="btn btn-primary" href="{{url('jugadores/perfil/editar/'.$jugador->id)}}">Editar </a>
+                        <img src="{{url('jugadorimages/'.$jugador->logo)}}" class="m-x-auto img-fluid img-circle" alt="avatar" style="width:300px; height:300px;">
+                        
                     </div>
                     <div class="col-lg-6">
                         <h6>Nickname</h6>
@@ -40,10 +35,12 @@
                               {{ 'No registrado' }}  
                             @endif
                         </p>
+                        <a class="btn btn-primary" href="{{url('jugadores/perfil/editar/'.$jugador->id)}}" margin-top="5">Editar perfil</a>
                     </div>
+                    
                 </div>
             </div>
-            <div class="col-xl-3 col-lg-4 sidebar-widget">
+            <!--<div class="col-xl-3 col-lg-4 sidebar-widget">
                 <div class="widget widget-search">
                     <div class="input-group stylish-input-group">
                         <input type="text" class="form-control" placeholder="Search Story . . .">
@@ -178,7 +175,7 @@
                         <li><a href="#">Cycling</a></li>
                     </ul>
                 </div>
-            </div>
+            </div>-->
         </div>
     </div>
 </section>

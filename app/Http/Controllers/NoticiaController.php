@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Noticia;
+use App\NoticiasImages;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -126,6 +127,25 @@ class NoticiaController extends Controller
         $noti->delete();
        // return $id;
         return redirect('admin/noticias');
+    }
+
+    public function DropZone(Request $request){
+        $noticiaImage = new NoticiasImages();
+        $image = $request->file('file');
+        if($image){
+            $image_path = time().$image->getClientOriginalName();
+            \Storage::disk('noticiasimages')->put($image_path,\File::get($image));
+            $noticiaImage->url_imagen = $image_path;
+        }
+        $noticiaImage->noticia_id = $request->id_noticia;
+
+        $noticiaImage->save();
+
+    }
+    public function getImageCarrusel($filename){
+        $file = Storage::disk('noticiasimages')->get($filename);
+        return new Response($file,200);
+
     }
     
 

@@ -21,4 +21,10 @@ class HomeController extends Controller
     public function AdminHome(){
         return view('admin.home');
     }
+    public function PruebaAjax(){
+        return 'prueba ajax';
+    }
+    
+
+
 }

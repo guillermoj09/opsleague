@@ -7,16 +7,17 @@
             <div class="col-xl-9 col-lg-8">
                 <div class="row">
                     <div class="col-lg-6">
+                        <form action="{{url('jugadores/perfil/actualizar')}}" method="post" enctype="multipart/form-data">
                         <img src="{{url('jugadorimages/'.$jugador->logo)}}" class="m-x-auto img-fluid img-circle" alt="avatar">
-                        <h6 class="m-t-2">Upload a different photo</h6>
+              
                         <label class="custom-file">
-                            <input type="file" id="file" class="custom-file-input">
-                            <span class="custom-file-control">Añadir foto</span>
+                            <input type="file" id="file" class="custom-file-input" id="imgPerfil" name="imgPerfil">
+                            <span class="btn btn-primary">Cambiar foto de perfil</span>
                         </label>
                        
                     </div>
                     <div class="col-lg-4">
-                    <form action="{{url('jugadores/perfil/actualizar')}}" method="post" enctype="multipart/form-data">
+                    
                         {{ csrf_field() }}
                                 @if($errors->any())
                                     <div class="alert alert-danger">

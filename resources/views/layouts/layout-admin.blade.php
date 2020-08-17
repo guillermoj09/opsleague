@@ -20,6 +20,8 @@
     <link rel="stylesheet" href="{{asset('dependencies/select2/css/select2.min.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('dependencies/nivo-slider/nivo-slider.css')}}" type="text/css">
     <link rel="stylesheet" href="{{asset('dependencies/meanmenu/meanmenu.min.css')}}" type="text/css">
+    <link rel="stylesheet" href="{{asset('dependencies/dropzone/dist/dropzone.css')}}">
+
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.css">
     <link rel="stylesheet" href=" https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
@@ -66,6 +68,7 @@
 <script src="{{asset('dependencies/meanmenu/jquery.meanmenu.min.js')}}"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+<script src="{{asset('dependencies/dropzone/dist/dropzone.js')}}"></script>
     <!-- Custom Js -->
 <script src="{{asset('assets/js/app.js')}}"></script>
 
@@ -73,4 +76,22 @@
     $(document).ready(function() {
         $('#example').DataTable();
     } );
+
+    $("#btnajax").click(function(){
+      
+      $.ajax({
+            url: '/pruebaajax',
+            method: 'GET',
+            success: function(respuesta) {
+                alert(respuesta);
+                console.log(respuesta);
+            }
+        });
+
+
+    });
+
+
+    
 </script>
+

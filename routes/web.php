@@ -60,10 +60,15 @@ Route::get('/jugadorimages/{filename}',array(
     'as' => 'imageJugador',
     'uses' =>  'Jugador\JugadorController@getImage'
 ));
-
+//OBTENER BANNER TORNEO
 Route::get('/torneoimages/{filename}',array(
     'as' => 'imagetorneo',
-    'uses' =>  'Jugador\JugadorController@getImage'
+    'uses' =>  'TorneoController@getImage'
+));
+//CARRUSEL
+Route::get('/carrusel/{filename}',array(
+    'as' => 'carrusel',
+    'uses' =>  'NoticiaController@getImageCarrusel'
 ));
 
 
@@ -98,6 +103,8 @@ Route::get('torneo/ver/{id}','TorneoController@show');
 
 Route::post('/crearComentario','CommentTorneoController@store')->name('crearComentario');
 
+Route::post('/file-upload','NoticiaController@DropZone');
+
 use App\Torneo;
 
 Route::get('prueba',function(){
@@ -117,3 +124,5 @@ Route::get('prueba',function(){
 
 //RUTAS NOTICIAS 
 Route::get('noticia/ver/{id}','NoticiaController@VerNoticia');
+
+Route::get('/pruebaajax','HomeController@PruebaAjax');

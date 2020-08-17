@@ -34,7 +34,13 @@ class JugadorController extends Controller
         $jugador->nickname = $request->nickname;
         $jugador->nombre_completo = $request->nombre_completo;
         $jugador->pais = $request->pais;
-
+        $image1 = $request->file('imgPerfil');
+        if($image1){
+            $image_path = time().$image1->getClientOriginalName();
+            \Storage::disk('imagesJugadores')->put($image_path,\File::get($image1));
+            $jugador->logo = $image_path;
+        }
+        //return $image1;
         $jugador->save();
         return redirect('/jugadores/perfil/ver/'.$id);
 

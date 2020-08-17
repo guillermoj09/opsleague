@@ -49,6 +49,14 @@
                         <input type="submit" value="Guardar">
                     </div>
                 </form>
+                <form action="/file-upload" class="dropzone" method="post" enctype="multipart/form-data" >
+                    
+                    {{ csrf_field() }}
+                    <input type="hidden" id ="id_noticia" name="id_noticia" value="{{$noticia->id}}">
+                    <div class="fallback">
+                        <input type="file" name="file" id="file" multiple />
+                      </div>
+                    </form>
             </div>
         </div>
     </body>

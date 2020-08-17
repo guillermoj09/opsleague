@@ -15,5 +15,7 @@ class Noticia extends Model
     public function juego(){
         return $this->belongsTo('App\Juego','juego_id');
     }
-
+    public function noticiasImages(){
+        return $this->hasMany('App\NoticiasImages','noticia_id');
+    }
 }

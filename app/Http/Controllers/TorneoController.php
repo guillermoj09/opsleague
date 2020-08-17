@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\HttpFoundation\Response;
+
 
 use App\Torneo;
 use App\Juego;
@@ -16,7 +19,13 @@ class TorneoController extends Controller
         $listadoTorneos = Torneo::all();
         return view('torneo',['torneos' => $listadoTorneos,'torneo' => $torneo]);
     }
+    public function getImage($filename){
+        $file = Storage::disk('torneos')->get($filename);
+        return new Response($file,200);
+    }
 
+
+    //METODOS ADMIN
     public function index(){
         $listado = Torneo::all();
         return view('admin.torneo', ['torneos' => $listado]);
