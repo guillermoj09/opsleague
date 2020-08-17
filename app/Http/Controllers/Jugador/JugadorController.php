@@ -23,6 +23,10 @@ class JugadorController extends Controller
         return new Response($file,200);
     }
     public function editarJugador($id){
+        $idUsuarioLogin = Auth::user('web')->id;
+        if($idUsuarioLogin != $id){
+            return redirect('/');
+        }
         $jugador = Jugador::find($id);
         return view('jugador.editar',['jugador' => $jugador]);
     }
@@ -55,8 +59,5 @@ class JugadorController extends Controller
 
     }
 
-
-
-    
 
 }

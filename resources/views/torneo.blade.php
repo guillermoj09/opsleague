@@ -108,9 +108,7 @@
                                                             <p>{{$co_coment->comentario}}</p>
                                                             
                                                         </div>  
-                                                    </div>
-                                               
-                                                $count++;     
+                                                    </div>                                             
                                             @endforeach
                                             <div id="capadiv-{{$comment->id}}"></div>
                                             @if(Auth::guard('web')->check())
