@@ -32,8 +32,6 @@ Route::get('jugadores/perfil/ver/{id}','Jugador\JugadorController@ver')->name('j
 Route::get('jugadores/perfil/editar/{id}','Jugador\JugadorController@editarJugador')->middleware('auth:web');
 Route::post('jugadores/perfil/actualizar','Jugador\JugadorController@Update');
 
-Route::get('jugadores/cambiarPassword/{id}','Jugador\PasswordController@showCambiarPassword');
-Route::post('jugadores/cambiarPassword/','Jugador\PasswordController@storeCambiarPassword');
 
 //GUARDADO DE JUGADORES
 Route::post('/registro','RegisterController@save')->name('registro');

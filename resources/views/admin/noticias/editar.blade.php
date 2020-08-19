@@ -22,7 +22,7 @@
                     <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" value="{{$noticia->titulo}}">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Sub Titulo</label>
+                        <label for="exampleFormControlInput1">Viñeta</label>
                     <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="Sub-Titulo" value="{{$noticia->subtitulo}}">
                     </div>
                     <div class="form-group">

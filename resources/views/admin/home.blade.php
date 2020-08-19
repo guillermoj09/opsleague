@@ -1,9 +1,9 @@
 @extends('layouts.layout-admin')
 
 @section('contenido')
-    <h1>Hola, soy home</h1>
+    <h1>Home</h1>
 
     
-      <button id="btnajax"> hola</button>
+      {{--<button id="btnajax"> hola</button>--}}
 
 @endsection
