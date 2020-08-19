@@ -25,9 +25,13 @@ class RedirectIfAuthenticated
                 break;
             case 'web':
                 if (Auth::guard($guard)->check()) {
-                    return redirect('/');
+                    $response = $next($request);
+
+                    // Perform action
+            
+                    return $response;
                 }
-                break;
+                
             default:
                
             break;

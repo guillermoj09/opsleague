@@ -35,7 +35,9 @@
                               {{ 'No registrado' }}  
                             @endif
                         </p>
-                        <a class="btn btn-primary" href="{{url('jugadores/perfil/editar/'.$jugador->id)}}" margin-top="5">Editar perfil</a>
+                        @if(auth("web")->user()->id == $jugador->id)
+                            <a class="btn btn-primary" href="{{url('jugadores/perfil/editar/'.$jugador->id)}}" margin-top="5">Editar perfil</a>
+                        @endif
                     </div>
                     
                 </div>
