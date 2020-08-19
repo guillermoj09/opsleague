@@ -21,7 +21,7 @@
                     <input type="text" class="form-control" id="titulo" name="titulo" placeholder="Titulo" value="{{old('titulo')}}">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Sub Titulo</label>
+                        <label for="exampleFormControlInput1">Viñeta</label>
                     <input type="text" class="form-control" id="subtitulo" name="subtitulo" placeholder="Sub-Titulo" value="{{old('subtitulo')}}">
                     </div>
                     <div class="form-group">
@@ -29,7 +29,6 @@
                         <input type="text" class="form-control" id="categoria" name="categoria" value="{{old('categoria')}}" placeholder="Categoria">
                     </div>
                     <div class="form-group">
-<<<<<<< HEAD
                         <label for="imagen">Portada</label>
                         <input type="file" class="form-control-file" id="imagen1" name="imagen1">
                     </div>
@@ -38,12 +37,8 @@
                         <textarea class="form-control" id="parrafo1" name="parrafo1" value="{{old('parrafo1')}}" rows="3"></textarea>
                     </div>
                     <div class="form-group">
-                        <label for="imagen">Imagen 2</label>
+                        <label for="imagen">Imagen Noticia</label>
                         <input type="file" class="form-control-file" id="imagen2" name="imagen2">
-=======
-                        <label for="imagen">Example file input</label>
-                        <input type="file" class="form-control-file" id="imagen" name="imagen">
->>>>>>> b8f4f899f07687f0fb9333d806e9707b4673ed67
                     </div>
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1">Parrafo 2</label>

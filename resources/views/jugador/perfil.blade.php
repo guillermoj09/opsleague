@@ -8,7 +8,7 @@
                 <div class="row">
                     <div class="col-lg-6">
                         <img src="{{url('jugadorimages/'.$jugador->logo)}}" class="m-x-auto img-fluid img-circle" alt="avatar" style="width:300px; height:300px;">
-                        
+                        <a href="">¿Cambiar contraseña?</a>
                     </div>
                     <div class="col-lg-6">
                         <h6>Nickname</h6>

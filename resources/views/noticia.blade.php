@@ -51,14 +51,19 @@
                             <p> {{$noticia->parrafo_1}}</p>
                                 <p></p>
                                 <blockquote>
+                                    {{--viñeta--}}
                                     {{$noticia->subtitulo}}
                                 </blockquote>
-                            
-                                <img src="{{ url('noticiasimages/'.$noticia->imagen_1)}}" alt="Games" style="width:300px; height:310px;">
+                                <div class="col-md-10 .img-responsive center-block">
+                                    <img src="{{ url('noticiasimages/'.$noticia->imagen_2)}}" alt="Games" class="img-responsive"/>
+                                    <div class="h-30"></div>
+                                  </div>
+                                <br>
+
+                         
                                 <p>{{$noticia->parrafo_2}}</p>
-                                <img src="{{ url('noticiasimages/'.$noticia->imagen_2)}}" alt="Games" style="width:300px; height:310px;" >
-                                
                                 {{--CARRUSEL--}}
+                                <div class="col-xl-12 ">
                                 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
                                     <div class="carousel-inner">
                                         @foreach ($noticia->noticiasImages as $noticiaImage)
@@ -81,7 +86,7 @@
                                       <span class="sr-only">Siguiente</span>
                                     </a>
                                   </div>
-
+                                </div>
 
                                   {{--@foreach ($noticia->noticiasImages as $noticiaImage)
                                   @if ($loop->first) First Item:

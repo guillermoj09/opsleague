@@ -39,6 +39,7 @@ Route::get('jugadores/perfil/ver/{id}','Jugador\JugadorController@ver')->name('j
 Route::get('jugadores/perfil/editar/{id}','Jugador\JugadorController@editarJugador');
 Route::post('jugadores/perfil/actualizar','Jugador\JugadorController@Update');
 
+
 //GUARDADO DE JUGADORES
 Route::post('/registro','RegisterController@save')->name('registro');
 //VERIFICACION LOGIN
