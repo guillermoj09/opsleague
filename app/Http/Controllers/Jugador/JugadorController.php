@@ -8,14 +8,15 @@ use Illuminate\Http\Request;
 use App\Jugador;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;    
+use App\Torneo;
 
 class JugadorController extends Controller
 {
     public function ver($id){
-
+        $listadoTorneos = Torneo::all();
         $jugador = Jugador::find($id); // SELECT * FROM jugadores where id = $id;
 
-        return view('jugador.perfil',['jugador' => $jugador]);
+        return view('jugador.perfil',['torneos' => $listadoTorneos,'jugador' => $jugador]);
     }
 
     public function getImage($filename){
@@ -23,12 +24,13 @@ class JugadorController extends Controller
         return new Response($file,200);
     }
     public function editarJugador($id){
+        $listadoTorneos = Torneo::all();
         $idUsuarioLogin = Auth::user('web')->id;
         if($idUsuarioLogin != $id){
             return redirect('/');
         }
         $jugador = Jugador::find($id);
-        return view('jugador.editar',['jugador' => $jugador]);
+        return view('jugador.editar',['torneos' => $listadoTorneos,'jugador' => $jugador]);
     }
     public function Update(Request $request){
         $id = $request->id;

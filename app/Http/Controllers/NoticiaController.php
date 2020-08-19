@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Noticia;
 use App\NoticiasImages;
+use App\Torneo;
 
 use Illuminate\Support\Facades\Storage;
 
@@ -29,8 +30,8 @@ class NoticiaController extends Controller
     }
     public function VerNoticia($id){
         $noticia = Noticia::find($id);
-
-        return view('noticia',['noticia'=>$noticia]);
+        $listadoTorneos = Torneo::all();
+        return view('noticia',['torneos' => $listadoTorneos,'noticia' => $noticia]);
 
     }
     //ADMIN

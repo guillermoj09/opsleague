@@ -93,10 +93,11 @@
                                             <div class="media-body">
                                                 <h4 class="item-title">{{$comment->jugador->nickname}}<span>{{Carbon\Carbon::parse($comment->created_at)->format('d/m/Y H:i:s')}}</span></h4>
                                                 <p>{{$comment->comment}}</p>
+                                                <p class="text-left"><a type="button" style="" onclick="mostrarFormResp({{$comment->id}});"> Responder </a></p>
                                             </div>
                                         </div>
                                         <div class="comment-box" >
-                                            <?php $count = 0;?>
+                                            
                                             @foreach ($comment->comment_comments as $co_coment)
                                                     <div class="media" style="margin-left:55px">
                                                         <div class="item-img">

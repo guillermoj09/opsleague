@@ -26,7 +26,7 @@ class CommentComentController extends Controller
         $resultado = "<div class='media' style='margin-left:55px'><div class='item-img'>".
         "<img src='/jugadorimages/$logo' style='height: 75px; width: 75px;' alt='logo'></div>".                                                
         "<div class='media-body'><h4 class='item-title'>$nickname<span>September 29, 2019</span></h4>".
-        "<p>$commentcomment->comentario</p> </div> </div>";
+        "<p>$commentcomment->comentario</p></div> </div>";
         
         //return $resultado;
         return $resultado;

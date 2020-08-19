@@ -105,6 +105,8 @@ Route::get('torneo/ver/{id}','TorneoController@show');
 
 Route::post('/crearComentario','CommentTorneoController@store')->name('crearComentario');
 
+Route::post('/crearRespuesta','CommentComentController@store')->name('crearRespuesta');
+
 Route::post('/file-upload','NoticiaController@DropZone');
 
 use App\Torneo;
