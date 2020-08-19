@@ -11,11 +11,11 @@
                 <thead>
                     <tr>
 
-                        <th data-toggle="true">Título:</th>
-                        <th data-hide="phone">Subtitulo:</th>
-                        <th data-hide="all">Categoria:</th>
-                        <th data-hide="all">Descripción:</th>
-                        <th data-hide="all">Acción:</th>
+                        <th data-toggle="true">Título</th>
+                        <th data-hide="phone">Subtitulo</th>
+                        <th data-hide="all">Categoria</th>
+                        <th data-hide="all">Descripción</th>
+                        <th data-hide="all">Acción</th>
                     </tr>
                 </thead>
                 <tbody>

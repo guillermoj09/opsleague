@@ -35,11 +35,11 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Fecha comienzo:</label>
+                        <label for="exampleFormControlInput1">Fecha comienzo</label>
                         <input type="date" class="form-control" id="fecha_comienzo" name="fecha_comienzo" value="{{$torneo->fecha_comienzo}}">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Descripción:</label>
+                        <label for="exampleFormControlTextarea1">Descripción</label>
                     <textarea class="form-control" id="descripcion" name="descripcion" rows="3"> {{$torneo->descripcion}}</textarea>
                     </div>
                     <div class="form-group row">

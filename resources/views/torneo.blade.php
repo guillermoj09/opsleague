@@ -35,12 +35,12 @@
                     <div class="col-12">
                         <div class="breadcrumbs-area">
                             <h2 class="post-title" style="color:#ffffff">{{$torneo->nombre}} </h2>
-                            <ul>
+                            {{--<ul>
                                 <li>
                                     <a href="index.html">Home</a>
                                 </li>
                                 <li>Post Details</li>
-                            </ul>
+                            </ul>--}}
                         </div>
                     </div>
                 </div>

@@ -130,7 +130,7 @@
                                     </ul>
                                 </li>
                                 <li>
-                                    <a href="#">RANKING</a>
+                                    <a href="#">DIVISIÓN</a>
                                     <ul class="dropdown-menu-col-1">
                                         <li>
                                             <a href="#">PLAYERS</a>

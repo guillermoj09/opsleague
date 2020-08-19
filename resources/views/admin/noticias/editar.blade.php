@@ -34,7 +34,7 @@
                         <input type="file" class="form-control-file" id="imagen1" name="imagen1">
                       </div>
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Parrafo 1:</label>
+                        <label for="exampleFormControlTextarea1">Parrafo 1</label>
                     <textarea class="form-control" id="parrafo1" name="parrafo1" rows="3" >{{$noticia->parrafo_1}}</textarea>
                     </div>
                     <div class="form-group">
