@@ -205,7 +205,7 @@
                     <div class="col-lg-6">
                         <div class="footer-box text-lg-center">
                             <div class="footer-logo">
-                            <a href="{{url('/')}}"><img src="{{asset('media/main-logo.png')}}" alt="logo"></a>
+                            <a href="{{url('/')}}"><img src="{{asset('media/opsblanco.png')}}" alt="logo"></a>
                             </div>
                             <p>Equipo de jugadores experimentados dedicados a los esports con el objetivo de gestionar torneos profesionales y transparentes para nuestros gamers.</p>
                             
@@ -242,7 +242,7 @@
         <button class="close-btn sidebar-toggle"><i class="fas fa-times"></i></button>
         <div class="sidebar-logo">
         <a href="{{url('/')}}">
-                <img src="media/main-logo.png" alt="Side Logo">
+                <img src="media/opsblanco.png" alt="Side Logo">
             </a>
         </div>
         <ul class="menu-list">
