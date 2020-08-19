@@ -18,6 +18,15 @@
                                 {!! $errors->first('email','<span class="help-block">:message</span>') !!}
                             </div>
                             <div class="form-group">
+                                <label for="pais">Pais</label> 
+                                <select type="text" class="browser-default custom-select custom-select-lg mb-3" id="pais" name="pais">
+                                    <option value="Chile">Chile</option>
+                                    <option value="Per">Perú</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Argentina">Argentina</option>
+                                </select> 
+                            </div>
+                            <div class="form-group">
                                 <label for="nickname">Nickname</label> 
                                 <input class="form-control" type="text" name="nickname" id="nickname" placeholder="Ingrese tu password">   
                                 {!! $errors->first('nickname','<span class="help-block">:message</span>') !!}
@@ -30,10 +39,7 @@
                                 <label for="nombrecompleto">Nombre Completo</label> 
                                 <input class="form-control" type="text" name="nombrecompleto" id="nombrecompleto" placeholder="Ingrese tu password">    
                             </div>
-                            <div class="form-group">
-                                <label for="pais">Pais</label> 
-                                <input class="form-control" type="text" name="pais" id="pais" placeholder="Ingrese tu password">    
-                            </div>
+                            
                 
                             <button class="btn btn-danger btn-block">Registrar</button>
                         </form>
