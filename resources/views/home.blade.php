@@ -14,7 +14,7 @@
 	<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
   	<![endif]-->
     <!-- Preloader Start Here -->
-    <div id="preloader" img="media/main-logo.png"></div>
+    <div id="preloader" img="media/opsblanco.png"></div>
     <!-- Preloader End Here -->
     <!-- Back To Top Start Here -->
     <a href="#main-wrapper" data-type="section-switch" class="scrollup">
