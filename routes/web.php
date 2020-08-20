@@ -107,6 +107,8 @@ Route::post('/crearRespuesta','CommentComentController@store')->name('crearRespu
 
 Route::post('/file-upload','NoticiaController@DropZone');
 
+Route::get('jugadores/cambiarPassword/{id}','Jugador\PasswordController@showCambiarPassword');
+
 use App\Torneo;
 
 Route::get('prueba',function(){

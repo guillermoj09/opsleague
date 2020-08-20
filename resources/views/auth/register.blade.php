@@ -5,6 +5,7 @@
 
 <body>
     <div class="container">
+        
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <div class="card">
@@ -32,7 +33,9 @@
                             </div>
                             <div class="form-group">
                                 <label for="pais">Pais</label> 
-                                <input class="form-control" type="text" name="pais" id="pais" placeholder="Ingrese tu password">    
+                                <select   name="pais">
+                                    <option value="1" selected>Chile</option>
+                                </select> 
                             </div>
                 
                             <button class="btn btn-danger btn-block">Registrar</button>

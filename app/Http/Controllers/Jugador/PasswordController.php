@@ -15,7 +15,11 @@ class PasswordController extends Controller
         return view('jugador.password');
     }
 
-    public function showCambiarPassword(){
+    public function showCambiarPassword($id){
+        $idUsuarioLogin = Auth::user('web')->id;
+        if($idUsuarioLogin != $id){
+            return redirect('/');
+        }
         return view('auth.passwords.cambiarpassword');
     }
 

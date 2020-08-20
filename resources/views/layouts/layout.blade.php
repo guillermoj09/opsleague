@@ -344,6 +344,7 @@
             success: function(respuesta) {
                 //console.log(respuesta);
                 $("#comentario_nuevo").append(respuesta);
+                $("#comment").val(""); 
             }
         });
     });
