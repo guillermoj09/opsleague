@@ -66,16 +66,24 @@
 <script src="{{asset('dependencies/imagesloaded/js/imagesloaded.pkgd.min.js')}}"></script>
 <script src="{{asset('dependencies/validator/validator.min.js')}}"></script>
 <script src="{{asset('dependencies/meanmenu/jquery.meanmenu.min.js')}}"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
-<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+{{--<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>--}}
+<script src="{{asset('dependencies/jquery/js/datatable.min.js')}}"></script>
+{{--<script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>--}}
+<script src="{{asset('dependencies/bootstrap/js/datatable.bootstrap4.min.js')}}"></script>
 <script src="{{asset('dependencies/dropzone/dist/dropzone.js')}}"></script>
     <!-- Custom Js -->
 <script src="{{asset('assets/js/app.js')}}"></script>
 
 <script>
     $(document).ready(function() {
-        $('#example').DataTable();
+        $('#example').DataTable({
+          "language": {
+                    "url": "{{asset('dependencies/jquery/js/traducir.json')}}"
+                }
+        });
+        
     } );
+
 
     $("#btnajax").click(function(){
       

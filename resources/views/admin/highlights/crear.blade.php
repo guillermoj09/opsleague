@@ -17,18 +17,18 @@
                         </div>
                     @endif
                     <div class="form-group">
-                    <label for="exampleFormControlInput1">nombre</label>
+                    <label for="exampleFormControlInput1">Nombre</label>
                     <input type="text" class="form-control" id="nombre" name="nombre" value="">
                     </div>
                     <div class="form-group">
-                        <label for="exampleFormControlInput1">Juego:</label>
+                        <label for="exampleFormControlInput1">Juego</label>
                         <select class="form-control" id="juego" name="juego">
                             @foreach ($juegos as $juego)
                                 <option value="{{$juego->id}}">{{$juego->nombre}}</option>
                             @endforeach
                         </select>
                     </div>
-                    <label for="basic-url">URL:</label>
+                    <label for="basic-url">URL</label>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text">https://www.youtube.com/</span>

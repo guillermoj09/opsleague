@@ -10,11 +10,11 @@
             <table id="example" class="table table-striped table-bordered toggle-arrow-tiny" style="width:100%">
                 <thead>
                     <tr>
-                        <th data-toggle="true">Nombre:</th>
-                        <th data-hide="phone">Juego:</th>
-                        <th data-hide="all">fecha comienzo:</th>
-                        <th data-hide="all">Descripción:</th>
-                        <th data-hide="all">Acción:</th>
+                        <th data-toggle="true">Nombre</th>
+                        <th data-hide="phone">Juego</th>
+                        <th data-hide="all">fecha comienzo</th>
+                        <th data-hide="all">Descripción</th>
+                        <th data-hide="all">Acción</th>
                     </tr>
                 </thead>
                 <tbody>
