@@ -33,11 +33,13 @@
                             </div>
                             <div class="form-group">
                                 <label for="pais">Pais</label> 
-                                <select   name="pais">
-                                    <option value="1" selected>Chile</option>
+                                <select type="text" class="browser-default custom-select custom-select-lg mb-3" id="pais" name="pais">
+                                    <option value="Chile">Chile</option>
+                                    <option value="Per">Perú</option>
+                                    <option value="Bolivia">Bolivia</option>
+                                    <option value="Argentina">Argentina</option>
                                 </select> 
                             </div>
-                
                             <button class="btn btn-danger btn-block">Registrar</button>
                         </form>
                     </div>

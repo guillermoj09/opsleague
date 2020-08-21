@@ -53,9 +53,10 @@
                     
                     {{ csrf_field() }}
                     <input type="hidden" id ="id_noticia" name="id_noticia" value="{{$noticia->id}}">
-                    <div class="fallback">
-                        <input type="file" name="file" id="file" multiple />
-                      </div>
+                        <div class="fallback">
+                            <input type="file" name="file" id="file" multiple />
+                            <div class="dropzone-previews"></div>
+                        </div>
                     </form>
             </div>
         </div>

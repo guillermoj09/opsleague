@@ -71,7 +71,7 @@
                                                         <div class="author-name"><a href="#">{{$torneo->administrador->email}}</a></div>
                                                         </div>
                                                     </li>
-                                                    <div class="post-date"><i class="flaticon-clock"></i> {{Carbon\Carbon::parse($torneo->created_at)->format('d/m/Y H:i:s')}}</div>
+                                                    <div class="post-date"><i class="flaticon-clock"></i> {{ $torneo->created_at->diffForHumans() }}</div>
                                                 </ul>
                                             </div>
                                         </div>
@@ -91,7 +91,7 @@
                                                 <img src="{{ url('jugadorimages/'.$comment->jugador->logo)}}" style="height: 105px; width: 105px;" alt="logo">
                                             </div>
                                             <div class="media-body">
-                                                <h4 class="item-title">{{$comment->jugador->nickname}}<span>{{Carbon\Carbon::parse($comment->created_at)->format('d/m/Y H:i:s')}}</span></h4>
+                                                <h4 class="item-title">{{$comment->jugador->nickname}}<span>{{$comment->created_at->diffForHumans()}}</span></h4>
                                                 <p>{{$comment->comment}}</p>
                                                 <p class="text-left"><a type="button" style="" onclick="mostrarFormResp({{$comment->id}});"> Responder </a></p>
                                             </div>
@@ -105,7 +105,7 @@
 
                                                         </div>
                                                         <div class="media-body">
-                                                            <h4 class="item-title">{{$co_coment->jugador->nickname}}<span></span></h4>
+                                                            <h4 class="item-title">{{$co_coment->jugador->nickname}}<span>{{$co_coment->created_at->diffForHumans()}}</span></h4>
                                                             <p>{{$co_coment->comentario}}</p>
                                                             
                                                         </div>  

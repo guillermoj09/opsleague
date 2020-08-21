@@ -10,9 +10,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 use App\Torneo;
 use App\Juego;
-
+use Carbon\Carbon;
 class TorneoController extends Controller
 {
+
+    public function __construct(){
+        Carbon::setLocale('es');
+    }
+
     public function show($id){
         $torneo = Torneo::find($id);
         //return $torneo->nombre;
